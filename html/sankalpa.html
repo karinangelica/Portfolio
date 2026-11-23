@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sankalpa, Studi Kasus Karin Angelica</title>
+  <meta name="description" content="Studi kasus Sankalpa, game edukasi 2D untuk anak dengan disabilitas intelektual. Video, layar game, dan karya tulis yang bisa dibalik." />
+  <link rel="icon" type="image/svg+xml" href="../images/icon/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=DM+Sans:opsz,wght@9..40,400..700&family=JetBrains+Mono:wght@500&display=swap" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/proyek.css" />
+  <link rel="stylesheet" href="../css/buku.css" />
+  <link rel="stylesheet" href="../css/sankalpa.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten utama</a>
+
+  <header class="navbar">
+    <nav class="navdiv container" aria-label="Navigasi utama">
+      <a class="logo" href="../index.html">
+        <span class="logo-mark" aria-hidden="true">K</span>
+        <span class="logo-nama">Karin Angelica</span>
+      </a>
+      <ul class="navlinks">
+        <li class="navlink"><a href="../index.html#proyek">Proyek</a></li>
+        <li class="navlink"><a href="../index.html#prestasi">Prestasi</a></li>
+        <li class="navlink"><a href="../index.html#tentang">Tentang</a></li>
+        <li class="navlink"><a href="../index.html#kontak">Kontak</a></li>
+      </ul>
+      <a class="btn btn-utama" href="../files/CV_Karin_Angelica.pdf" download>Unduh CV</a>
+    </nav>
+  </header>
+
+  <main id="main" class="studi">
+    <div class="container">
+      <a class="kembali" href="../index.html#proyek">Kembali ke semua proyek</a>
+
+      <header class="studi-head">
+        <h1>Sankalpa</h1>
+        <p class="studi-lead">Game edukasi 2D yang membantu anak dengan disabilitas intelektual berlatih mandiri dalam kegiatan sehari-hari, sambil mengenal budaya Pontianak.</p>
+        <dl class="studi-meta">
+          <div>
+            <dt>Peran</dt>
+            <dd>Pengembang game dan penyusun proposal</dd>
+          </div>
+          <div>
+            <dt>Tim</dt>
+            <dd>Tim Nova: Karin Angelica dan Jocelyn Patricia Fedella</dd>
+          </div>
+          <div>
+            <dt>Teknologi</dt>
+            <dd>C#, Unity</dd>
+          </div>
+          <div>
+            <dt>Hasil</dt>
+            <dd><mark>Semifinalis nasional FIKSI</mark>, juara 2 Provinsi Kalimantan Barat</dd>
+          </div>
+        </dl>
+        <nav class="lompat" aria-label="Di halaman ini">
+          <a href="#video">Video</a>
+          <a href="#layar">Layar game</a>
+          <a href="#cerita">Cerita proyek</a>
+          <a href="#karya-tulis">Karya tulis</a>
+        </nav>
+      </header>
+
+      <section class="blok" id="video" aria-labelledby="judul-video">
+        <div class="blok-head">
+          <h2 id="judul-video">Lihat game-nya bergerak</h2>
+          <p>Dua video dari dokumen lomba kami: video prototipe di ringkasan eksekutif dan video navigasi di proposal usaha.</p>
+        </div>
+        <div class="video-grid">
+          <article class="video-kartu">
+            <div class="video-bingkai">
+              <p>Video dimuat dari Google Drive. Jika tidak tampil, buka lewat tautan di bawah.</p>
+              <iframe src="https://drive.google.com/file/d/12SI6bIqm1uZ_xUqSdAENv9XkkQhgIWCK/preview" title="Video prototipe Sankalpa" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <h3>Video prototipe</h3>
+              <a href="https://drive.google.com/file/d/12SI6bIqm1uZ_xUqSdAENv9XkkQhgIWCK/view" target="_blank" rel="noopener">Buka di Google Drive</a>
+            </div>
+          </article>
+          <article class="video-kartu">
+            <div class="video-bingkai">
+              <p>Video dimuat dari Google Drive. Jika tidak tampil, buka lewat tautan di bawah.</p>
+              <iframe src="https://drive.google.com/file/d/1yqFeUYBqKN-IEV4sSAlAVc02gDyoGwH2/preview" title="Video navigasi prototipe Sankalpa" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <h3>Video navigasi prototipe</h3>
+              <a href="https://drive.google.com/file/d/1yqFeUYBqKN-IEV4sSAlAVc02gDyoGwH2/view" target="_blank" rel="noopener">Buka di Google Drive</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Layar game -->
+      <section class="blok" id="layar" aria-labelledby="judul-layar">
+        <div class="blok-head">
+          <h2 id="judul-layar">Jelajahi layar game</h2>
+          <p>Pilih level, lalu geser untuk melihat apa yang dilakukan anak di setiap tahap.</p>
+        </div>
+        <div class="layar-jelajah">
+          <input class="layar-radio" type="radio" name="layar" id="layar-mulai" checked />
+          <input class="layar-radio" type="radio" name="layar" id="layar-level1" />
+          <input class="layar-radio" type="radio" name="layar" id="layar-level2" />
+          <input class="layar-radio" type="radio" name="layar" id="layar-level3" />
+          <input class="layar-radio" type="radio" name="layar" id="layar-level4" />
+          <input class="layar-radio" type="radio" name="layar" id="layar-level5" />
+          <input class="layar-radio" type="radio" name="layar" id="layar-minat" />
+          <div class="layar-tab">
+            <label for="layar-mulai">Mulai</label>
+            <label for="layar-level1">Level 1: Awal hari</label>
+            <label for="layar-level2">Level 2: Makanan</label>
+            <label for="layar-level3">Level 3: Lingkungan</label>
+            <label for="layar-level4">Level 4: Sekolah</label>
+            <label for="layar-level5">Level 5: Menabung</label>
+            <label for="layar-minat">Eksplorasi Minat</label>
+          </div>
+          <div class="tablet">
+            <div class="layar-strip strip-mulai" role="group" aria-label="Mulai">
+              <figure><img src="../images/sankalpa/mulai-1.jpg" alt="Layar game Sankalpa. Layar pembuka: pilih Simulation atau Eksplorasi Minat." width="960" height="565" loading="lazy" /><figcaption>Layar pembuka: pilih <b>Simulation</b> atau <b>Eksplorasi Minat</b>.</figcaption></figure>
+              <figure><img src="../images/sankalpa/mulai-2.jpg" alt="Layar game Sankalpa. Pilih karakter: Eleena atau Mateo." width="960" height="565" loading="lazy" /><figcaption>Pilih karakter: <b>Eleena</b> atau <b>Mateo</b>.</figcaption></figure>
+              <figure><img src="../images/sankalpa/mulai-3.jpg" alt="Layar game Sankalpa. Ibu menyapa “Selamat pagi, Eleena!”, anak menyusun jawaban dengan drag and drop." width="960" height="565" loading="lazy" /><figcaption>Ibu menyapa “Selamat pagi, Eleena!”, anak menyusun jawaban dengan <b>drag and drop</b>.</figcaption></figure>
+              <figure><img src="../images/sankalpa/mulai-4.jpg" alt="Layar game Sankalpa. Kalender: hari yang ditunggu-tunggu telah tiba." width="960" height="565" loading="lazy" /><figcaption>Kalender: hari yang ditunggu-tunggu telah tiba.</figcaption></figure>
+            </div>
+            <div class="layar-strip strip-level1" role="group" aria-label="Level 1: Awal hari">
+              <figure><img src="../images/sankalpa/level1-1.jpg" alt="Layar game Sankalpa. Level 1 dimulai, tiga bintang menunggu." width="960" height="565" loading="lazy" /><figcaption>Level 1 dimulai, tiga bintang menunggu.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level1-2.jpg" alt="Layar game Sankalpa. Ayo lakukan! Belajar menyikat gigi dengan menggeser sikat." width="960" height="565" loading="lazy" /><figcaption>Ayo lakukan! Belajar <b>menyikat gigi</b> dengan menggeser sikat.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level1-3.jpg" alt="Layar game Sankalpa. Buku panduan: cara memakai pasta gigi." width="960" height="565" loading="lazy" /><figcaption>Buku panduan: cara memakai <b>pasta gigi</b>.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level1-4.jpg" alt="Layar game Sankalpa. Memilih baju kurung di lemari." width="960" height="565" loading="lazy" /><figcaption>Memilih <b>baju kurung</b> di lemari.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level1-5.jpg" alt="Layar game Sankalpa. Mengenal budaya: baju kurung khas Melayu Pontianak." width="960" height="565" loading="lazy" /><figcaption>Mengenal budaya: <b>baju kurung</b> khas Melayu Pontianak.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level1-6.jpg" alt="Layar game Sankalpa. Buku panduan: cara mengancing baju." width="960" height="565" loading="lazy" /><figcaption>Buku panduan: cara <b>mengancing baju</b>.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level1-7.jpg" alt="Layar game Sankalpa. Ayo lakukan! Memasang kancing satu per satu." width="960" height="565" loading="lazy" /><figcaption>Ayo lakukan! Memasang kancing satu per satu.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level1-8.jpg" alt="Layar game Sankalpa. Level selesai, tiga bintang didapat." width="960" height="565" loading="lazy" /><figcaption>Level selesai, tiga bintang didapat.</figcaption></figure>
+            </div>
+            <div class="layar-strip strip-level2" role="group" aria-label="Level 2: Makanan">
+              <figure><img src="../images/sankalpa/level2-1.jpg" alt="Layar game Sankalpa. Level 2 tentang makanan khas Pontianak." width="960" height="565" loading="lazy" /><figcaption>Level 2 tentang makanan khas Pontianak.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level2-2.jpg" alt="Layar game Sankalpa. Pilih sarapanmu." width="960" height="565" loading="lazy" /><figcaption>Pilih sarapanmu.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level2-3.jpg" alt="Layar game Sankalpa. Mengenal budaya: kue bingke." width="960" height="565" loading="lazy" /><figcaption>Mengenal budaya: <b>kue bingke</b>.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level2-4.jpg" alt="Layar game Sankalpa. Ayo lakukan! Cara makan dengan sendok." width="960" height="565" loading="lazy" /><figcaption>Ayo lakukan! Cara <b>makan dengan sendok</b>.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level2-5.jpg" alt="Layar game Sankalpa. Susun puzzle untuk menemukan gambar tersembunyi." width="960" height="565" loading="lazy" /><figcaption>Susun puzzle untuk menemukan gambar tersembunyi.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level2-6.jpg" alt="Layar game Sankalpa. Level 2 selesai." width="960" height="565" loading="lazy" /><figcaption>Level 2 selesai.</figcaption></figure>
+            </div>
+            <div class="layar-strip strip-level3" role="group" aria-label="Level 3: Lingkungan">
+              <figure><img src="../images/sankalpa/level3-1.jpg" alt="Layar game Sankalpa. Level 3 tentang praktik ramah lingkungan." width="960" height="565" loading="lazy" /><figcaption>Level 3 tentang praktik ramah lingkungan.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level3-2.jpg" alt="Layar game Sankalpa. Membuat kompos dari sisa makanan." width="960" height="565" loading="lazy" /><figcaption>Membuat <b>kompos</b> dari sisa makanan.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level3-3.jpg" alt="Layar game Sankalpa. Ayo berkebun: siram pohon tengkawang." width="960" height="565" loading="lazy" /><figcaption>Ayo berkebun: siram pohon <b>tengkawang</b>.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level3-4.jpg" alt="Layar game Sankalpa. Mengenal budaya: tengkawang, tumbuhan khas Kalimantan." width="960" height="565" loading="lazy" /><figcaption>Mengenal budaya: tengkawang, tumbuhan khas Kalimantan.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level3-5.jpg" alt="Layar game Sankalpa. Mematikan lampu untuk menghemat energi." width="960" height="565" loading="lazy" /><figcaption><b>Mematikan lampu</b> untuk menghemat energi.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level3-6.jpg" alt="Layar game Sankalpa. Level 3 selesai." width="960" height="565" loading="lazy" /><figcaption>Level 3 selesai.</figcaption></figure>
+            </div>
+            <div class="layar-strip strip-level4" role="group" aria-label="Level 4: Sekolah">
+              <figure><img src="../images/sankalpa/level4-1.jpg" alt="Layar game Sankalpa. Level 4 tentang lingkungan sekolah." width="960" height="565" loading="lazy" /><figcaption>Level 4 tentang lingkungan sekolah.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level4-2.jpg" alt="Layar game Sankalpa. Berdialog dengan teman sebaya, Mateo." width="960" height="565" loading="lazy" /><figcaption>Berdialog dengan teman sebaya, <b>Mateo</b>.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level4-3.jpg" alt="Layar game Sankalpa. Pasangkan bentuk geometri." width="960" height="565" loading="lazy" /><figcaption>Pasangkan <b>bentuk geometri</b>.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level4-4.jpg" alt="Layar game Sankalpa. Latihan menulis huruf ABC." width="960" height="565" loading="lazy" /><figcaption>Latihan menulis huruf <b>ABC</b>.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level4-5.jpg" alt="Layar game Sankalpa. Level 4 selesai." width="960" height="565" loading="lazy" /><figcaption>Level 4 selesai.</figcaption></figure>
+            </div>
+            <div class="layar-strip strip-level5" role="group" aria-label="Level 5: Menabung">
+              <figure><img src="../images/sankalpa/level5-1.jpg" alt="Layar game Sankalpa. Level 5 tentang mengelola keuangan." width="960" height="565" loading="lazy" /><figcaption>Level 5 tentang mengelola keuangan.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level5-2.jpg" alt="Layar game Sankalpa. Kotak tisu bekas yang akan diubah." width="960" height="565" loading="lazy" /><figcaption>Kotak tisu bekas yang akan diubah.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level5-3.jpg" alt="Layar game Sankalpa. Hias celenganmu sendiri." width="960" height="565" loading="lazy" /><figcaption><b>Hias celenganmu</b> sendiri.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level5-4.jpg" alt="Layar game Sankalpa. Mari menabung: masukkan koin ke celengan." width="960" height="565" loading="lazy" /><figcaption>Mari menabung: masukkan koin ke celengan.</figcaption></figure>
+              <figure><img src="../images/sankalpa/level5-5.jpg" alt="Layar game Sankalpa. Semua level selesai." width="960" height="565" loading="lazy" /><figcaption>Semua level selesai.</figcaption></figure>
+            </div>
+            <div class="layar-strip strip-minat" role="group" aria-label="Eksplorasi Minat">
+              <figure><img src="../images/sankalpa/minat-1.jpg" alt="Layar game Sankalpa. Eksplorasi minat lewat budaya Kalimantan Barat." width="960" height="565" loading="lazy" /><figcaption>Eksplorasi minat lewat budaya Kalimantan Barat.</figcaption></figure>
+              <figure><img src="../images/sankalpa/minat-2.jpg" alt="Layar game Sankalpa. Mewarnai corak insang sesuai nomor." width="960" height="565" loading="lazy" /><figcaption>Mewarnai <b>corak insang</b> sesuai nomor.</figcaption></figure>
+              <figure><img src="../images/sankalpa/minat-3.jpg" alt="Layar game Sankalpa. Ayo memasak." width="960" height="565" loading="lazy" /><figcaption>Ayo memasak.</figcaption></figure>
+              <figure><img src="../images/sankalpa/minat-4.jpg" alt="Layar game Sankalpa. Memainkan alat musik sape." width="960" height="565" loading="lazy" /><figcaption>Memainkan alat musik <b>sape</b>.</figcaption></figure>
+              <figure><img src="../images/sankalpa/minat-5.jpg" alt="Layar game Sankalpa. Memainkan alat musik agukng." width="960" height="565" loading="lazy" /><figcaption>Memainkan alat musik <b>agukng</b>.</figcaption></figure>
+            </div>
+          </div>
+          <p class="layar-petunjuk">Geser ke samping untuk melihat layar berikutnya.</p>
+        </div>
+      </section>
+
+      <div class="studi-body blok" id="cerita">
+        <nav class="studi-nav" aria-label="Bagian cerita proyek">
+          <p>Cerita proyek</p>
+          <ol>
+            <li><a href="#masalah">Masalah</a></li>
+            <li><a href="#solusi">Solusi</a></li>
+            <li><a href="#pengujian">Pengujian</a></li>
+            <li><a href="#usaha">Rencana usaha</a></li>
+            <li><a href="#peran">Peran saya</a></li>
+            <li><a href="#hasil">Hasil</a></li>
+          </ol>
+        </nav>
+
+        <div class="studi-konten">
+          <section id="masalah" aria-labelledby="h-masalah">
+            <h2 id="h-masalah">Masalah</h2>
+            <p>
+              Banyak anak dengan disabilitas intelektual belum mendapat akses pendidikan yang memadai. Akibatnya,
+              keterampilan sosial dan kognitif mereka ikut terbatas. Data yang kami kumpulkan di ringkasan eksekutif:
+            </p>
+            <div class="fakta-grid">
+              <div><strong>3,3%</strong><span>anak Indonesia usia 5–17 tahun hidup dengan disabilitas (RISKESDAS 2018)</span></div>
+              <div><strong>±20 juta</strong><span>penduduk Indonesia adalah penyandang disabilitas (data WHO)</span></div>
+              <div><strong>6%</strong><span>dari mereka yang tersentuh pendidikan</span></div>
+            </div>
+          </section>
+
+          <section id="solusi" aria-labelledby="h-solusi">
+            <h2 id="h-solusi">Solusi</h2>
+            <p>
+              Sankalpa adalah game 2D yang dibangun dengan Unity dan C#. Anak memilih karakter Eleena atau Mateo,
+              lalu bermain lewat dua fitur utama:
+            </p>
+            <ul>
+              <li><strong>Simulasi</strong> dalam lima level: awal hari, makanan, lingkungan, sekolah, dan menabung. Anak belajar menggosok gigi, mengancing baju, makan dengan sendok, membuat kompos, menghemat energi, sampai menabung.</li>
+              <li><strong>Eksplorasi minat</strong> untuk menemukan bakat lewat kesenian Kalimantan Barat: mewarnai corak insang, memasak, serta memainkan sape dan agukng.</li>
+              <li><strong>Budaya Pontianak di setiap level</strong>, seperti baju kurung, kue bingke, dan tengkawang.</li>
+              <li><strong>Hadiah yang memotivasi.</strong> Menyelesaikan level memberi koin untuk menonton video animasi dan lencana pencapaian.</li>
+            </ul>
+            <p>Navigasinya dibuat sederhana dan tingkat kesulitannya naik bertahap, agar anak bisa bermain sesuai kemampuannya.</p>
+          </section>
+
+          <section id="pengujian" aria-labelledby="h-pengujian">
+            <h2 id="h-pengujian">Pengujian</h2>
+            <p>
+              Kami menguji Sankalpa dengan lembar validasi aplikasi bersama Drs. Beatus Inno Merep, Lic, Psy, guru
+              Bimbingan Konseling di SMA Katolik Santu Petrus. Hasilnya, tampilan Sankalpa dinilai menarik dan mudah
+              dinavigasi oleh anak dengan disabilitas intelektual, instruksinya jelas dan sederhana, dan aktivitas
+              mewarnai serta musiknya membantu anak mengenali bakat mereka.
+            </p>
+          </section>
+
+          <section id="usaha" aria-labelledby="h-usaha">
+            <h2 id="h-usaha">Rencana usaha</h2>
+            <p>
+              Sankalpa kami ikutkan di FIKSI kategori Rencana Usaha, bidang Aplikasi, Video, dan Animasi Digital.
+              Target pasarnya anak dengan disabilitas intelektual usia 5–17 tahun dan orang tua mereka di Kalimantan Barat.
+            </p>
+            <ul>
+              <li><strong>Sumber pendapatan B2C</strong> dari iklan pop-up, pembelian koin untuk video animasi budaya Pontianak, dan membership.</li>
+              <li><strong>Sayembara bulanan #KreasiSankalpa</strong> agar karya lukis corak insang anak-anak bisa diapresiasi di dalam game.</li>
+              <li><strong>Modal awal Rp17.760.000</strong>, lengkap dengan proyeksi pendapatan, BEP, dan ROI di proposal.</li>
+            </ul>
+          </section>
+
+          <section id="peran" aria-labelledby="h-peran">
+            <h2 id="h-peran">Peran saya</h2>
+            <p>
+              Bersama Jocelyn Patricia Fedella, saya mengembangkan game ini, merancang navigasi UI dan tingkat
+              kesulitan bertahap, serta menyusun ringkasan eksekutif dan proposal usahanya.
+            </p>
+          </section>
+
+          <section id="hasil" aria-labelledby="h-hasil">
+            <h2 id="h-hasil">Hasil</h2>
+            <p>
+              Sankalpa melaju sebagai semifinalis tingkat nasional Festival Inovasi dan Kewirausahaan Siswa dari
+              Pusat Prestasi Nasional, dan meraih juara 2 tingkat Provinsi Kalimantan Barat.
+            </p>
+            <button class="btn-bukti" type="button" popovertarget="bukti-fiksi">Lihat bukti</button>
+          </section>
+        </div>
+      </div>
+
+      <section class="blok" id="karya-tulis" aria-labelledby="judul-karya">
+        <div class="blok-head">
+          <h2 id="judul-karya">Karya tulis</h2>
+          <p>Ringkasan eksekutif dan proposal usaha yang kami kirim ke FIKSI. Balik halamannya seperti membaca buku.</p>
+        </div>
+        <input class="buku-radio" type="radio" name="buku" id="pilih-ringkasan" checked />
+        <input class="buku-radio" type="radio" name="buku" id="pilih-proposal" />
+        <div class="buku-pilih">
+          <label for="pilih-ringkasan">Ringkasan eksekutif, 8 halaman</label>
+          <label for="pilih-proposal">Proposal usaha, 15 halaman</label>
+        </div>
+        <div class="buku-panel buku-panel-ringkasan">
+          <div class="buku-wrap">
+            <div class="buku" role="group" aria-label="Ringkasan Eksekutif Sankalpa, 8 halaman">
+              <div class="buku-kertas" style="--n: 4">
+                <div class="lembar" style="--i: 1">
+                  <input class="lembar-cek" type="checkbox" id="rk-lembar-1" aria-label="Balik halaman 1 dan 2" />
+                  <div class="muka depan">
+                    <label class="muka-klik" for="rk-lembar-1"><img src="../images/karya-tulis/ringkasan-01.jpg" alt="Halaman 1: Sampul ringkasan eksekutif Sankalpa, Tim Nova" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-rk-1">Perbesar</button>
+                  </div>
+                  <div class="muka belakang">
+                    <label class="muka-klik" for="rk-lembar-1"><img src="../images/karya-tulis/ringkasan-02.jpg" alt="Halaman 2: Latar belakang masalah, peluang usaha, dan value propositions" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-rk-2">Perbesar</button>
+                  </div>
+                </div>
+                <div class="lembar" style="--i: 2">
+                  <input class="lembar-cek" type="checkbox" id="rk-lembar-2" aria-label="Balik halaman 3 dan 4" />
+                  <div class="muka depan">
+                    <label class="muka-klik" for="rk-lembar-2"><img src="../images/karya-tulis/ringkasan-03.jpg" alt="Halaman 3: Value propositions canvas, segmentasi pasar, dan key activities" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-rk-3">Perbesar</button>
+                  </div>
+                  <div class="muka belakang">
+                    <label class="muka-klik" for="rk-lembar-2"><img src="../images/karya-tulis/ringkasan-04.jpg" alt="Halaman 4: Prototipe awal: tampilan pertama, tab, level 1 dan level 2" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-rk-4">Perbesar</button>
+                  </div>
+                </div>
+                <div class="lembar" style="--i: 3">
+                  <input class="lembar-cek" type="checkbox" id="rk-lembar-3" aria-label="Balik halaman 5 dan 6" />
+                  <div class="muka depan">
+                    <label class="muka-klik" for="rk-lembar-3"><img src="../images/karya-tulis/ringkasan-05.jpg" alt="Halaman 5: Prototipe awal: level 3 sampai level 5 dan eksplorasi minat" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-rk-5">Perbesar</button>
+                  </div>
+                  <div class="muka belakang">
+                    <label class="muka-klik" for="rk-lembar-3"><img src="../images/karya-tulis/ringkasan-06.jpg" alt="Halaman 6: Fitur simulasi: gosok gigi, kancing baju, puzzle, dan sendok" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-rk-6">Perbesar</button>
+                  </div>
+                </div>
+                <div class="lembar" style="--i: 4">
+                  <input class="lembar-cek" type="checkbox" id="rk-lembar-4" aria-label="Balik halaman 7 dan 8" />
+                  <div class="muka depan">
+                    <label class="muka-klik" for="rk-lembar-4"><img src="../images/karya-tulis/ringkasan-07.jpg" alt="Halaman 7: Fitur simulasi lanjutan dan fitur eksplorasi minat" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-rk-7">Perbesar</button>
+                  </div>
+                  <div class="muka belakang">
+                    <label class="muka-klik" for="rk-lembar-4"><img src="../images/karya-tulis/ringkasan-08.jpg" alt="Halaman 8: Halaman video prototipe Sankalpa" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-rk-8">Perbesar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="buku-geser" role="group" aria-label="Ringkasan Eksekutif Sankalpa, geser untuk membaca">
+              <button type="button" popovertarget="zoom-rk-1"><img src="../images/karya-tulis/ringkasan-01.jpg" alt="Halaman 1: Sampul ringkasan eksekutif Sankalpa, Tim Nova" width="900" height="1271" loading="lazy" /></button>
+              <button type="button" popovertarget="zoom-rk-2"><img src="../images/karya-tulis/ringkasan-02.jpg" alt="Halaman 2: Latar belakang masalah, peluang usaha, dan value propositions" width="900" height="1271" loading="lazy" /></button>
+              <button type="button" popovertarget="zoom-rk-3"><img src="../images/karya-tulis/ringkasan-03.jpg" alt="Halaman 3: Value propositions canvas, segmentasi pasar, dan key activities" width="900" height="1271" loading="lazy" /></button>
+              <button type="button" popovertarget="zoom-rk-4"><img src="../images/karya-tulis/ringkasan-04.jpg" alt="Halaman 4: Prototipe awal: tampilan pertama, tab, level 1 dan level 2" width="900" height="1271" loading="lazy" /></button>
+              <button type="button" popovertarget="zoom-rk-5"><img src="../images/karya-tulis/ringkasan-05.jpg" alt="Halaman 5: Prototipe awal: level 3 sampai level 5 dan eksplorasi minat" width="900" height="1271" loading="lazy" /></button>
+              <button type="button" popovertarget="zoom-rk-6"><img src="../images/karya-tulis/ringkasan-06.jpg" alt="Halaman 6: Fitur simulasi: gosok gigi, kancing baju, puzzle, dan sendok" width="900" height="1271" loading="lazy" /></button>
+              <button type="button" popovertarget="zoom-rk-7"><img src="../images/karya-tulis/ringkasan-07.jpg" alt="Halaman 7: Fitur simulasi lanjutan dan fitur eksplorasi minat" width="900" height="1271" loading="lazy" /></button>
+              <button type="button" popovertarget="zoom-rk-8"><img src="../images/karya-tulis/ringkasan-08.jpg" alt="Halaman 8: Halaman video prototipe Sankalpa" width="900" height="1271" loading="lazy" /></button>
+            </div>
+            <p class="buku-petunjuk"><span class="desktop">Klik halaman kanan untuk membalik, halaman kiri untuk kembali.</span><span class="ponsel-saja">Geser ke samping, ketuk halaman untuk memperbesar.</span></p>
+          </div>
+        </div>
+        <div class="buku-panel buku-panel-proposal">
+          <div class="buku-wrap">
+            <div class="buku" role="group" aria-label="Proposal Usaha Sankalpa, 15 halaman">
+              <div class="buku-kertas" style="--n: 8">
+                <div class="lembar" style="--i: 1">
+                  <input class="lembar-cek" type="checkbox" id="pp-lembar-1" aria-label="Balik halaman 1 dan 2" />
+                  <div class="muka depan">
+                    <label class="muka-klik" for="pp-lembar-1"><img src="../images/karya-tulis/proposal-01.jpg" alt="Halaman 1: Sampul proposal usaha Sankalpa, Tim Nova" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-pp-1">Perbesar</button>
+                  </div>
+                  <div class="muka belakang">
+                    <label class="muka-klik" for="pp-lembar-1"><img src="../images/karya-tulis/proposal-02.jpg" alt="Halaman 2: Deskripsi produk dan level fitur simulasi" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-pp-2">Perbesar</button>
+                  </div>
+                </div>
+                <div class="lembar" style="--i: 2">
+                  <input class="lembar-cek" type="checkbox" id="pp-lembar-2" aria-label="Balik halaman 3 dan 4" />
+                  <div class="muka depan">
+                    <label class="muka-klik" for="pp-lembar-2"><img src="../images/karya-tulis/proposal-03.jpg" alt="Halaman 3: Fitur mengenali minat, KreasiSankalpa, dan pengujian" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-pp-3">Perbesar</button>
+                  </div>
+                  <div class="muka belakang">
+                    <label class="muka-klik" for="pp-lembar-2"><img src="../images/karya-tulis/proposal-04.jpg" alt="Halaman 4: Revenue streams, harga, dan biaya investasi" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-pp-4">Perbesar</button>
+                  </div>
+                </div>
+                <div class="lembar" style="--i: 3">
+                  <input class="lembar-cek" type="checkbox" id="pp-lembar-3" aria-label="Balik halaman 5 dan 6" />
+                  <div class="muka depan">
+                    <label class="muka-klik" for="pp-lembar-3"><img src="../images/karya-tulis/proposal-05.jpg" alt="Halaman 5: Biaya tetap, biaya variabel, dan asumsi pendapatan" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-pp-5">Perbesar</button>
+                  </div>
+                  <div class="muka belakang">
+                    <label class="muka-klik" for="pp-lembar-3"><img src="../images/karya-tulis/proposal-06.jpg" alt="Halaman 6: Asumsi pendapatan bulan kedua dan proyeksi" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-pp-6">Perbesar</button>
+                  </div>
+                </div>
+                <div class="lembar" style="--i: 4">
+                  <input class="lembar-cek" type="checkbox" id="pp-lembar-4" aria-label="Balik halaman 7 dan 8" />
+                  <div class="muka depan">
+                    <label class="muka-klik" for="pp-lembar-4"><img src="../images/karya-tulis/proposal-07.jpg" alt="Halaman 7: Proyeksi pendapatan dan analisis BEP serta ROI" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-pp-7">Perbesar</button>
+                  </div>
+                  <div class="muka belakang">
+                    <label class="muka-klik" for="pp-lembar-4"><img src="../images/karya-tulis/proposal-08.jpg" alt="Halaman 8: Key resources dan key partnership" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-pp-8">Perbesar</button>
+                  </div>
+                </div>
+                <div class="lembar" style="--i: 5">
+                  <input class="lembar-cek" type="checkbox" id="pp-lembar-5" aria-label="Balik halaman 9 dan 10" />
+                  <div class="muka depan">
+                    <label class="muka-klik" for="pp-lembar-5"><img src="../images/karya-tulis/proposal-09.jpg" alt="Halaman 9: Sumber daya, mesin, dan metode" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-pp-9">Perbesar</button>
+                  </div>
+                  <div class="muka belakang">
+                    <label class="muka-klik" for="pp-lembar-5"><img src="../images/karya-tulis/proposal-10.jpg" alt="Halaman 10: Positioning, strategi pemasaran, dan channel" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-pp-10">Perbesar</button>
+                  </div>
+                </div>
+                <div class="lembar" style="--i: 6">
+                  <input class="lembar-cek" type="checkbox" id="pp-lembar-6" aria-label="Balik halaman 11 dan 12" />
+                  <div class="muka depan">
+                    <label class="muka-klik" for="pp-lembar-6"><img src="../images/karya-tulis/proposal-11.jpg" alt="Halaman 11: Lampiran 1: desain prototipe lanjutan" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-pp-11">Perbesar</button>
+                  </div>
+                  <div class="muka belakang">
+                    <label class="muka-klik" for="pp-lembar-6"><img src="../images/karya-tulis/proposal-12.jpg" alt="Halaman 12: Lampiran 1: level 4 dan fitur simulasi" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-pp-12">Perbesar</button>
+                  </div>
+                </div>
+                <div class="lembar" style="--i: 7">
+                  <input class="lembar-cek" type="checkbox" id="pp-lembar-7" aria-label="Balik halaman 13 dan 14" />
+                  <div class="muka depan">
+                    <label class="muka-klik" for="pp-lembar-7"><img src="../images/karya-tulis/proposal-13.jpg" alt="Halaman 13: Lampiran 1: fitur simulasi lanjutan" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-pp-13">Perbesar</button>
+                  </div>
+                  <div class="muka belakang">
+                    <label class="muka-klik" for="pp-lembar-7"><img src="../images/karya-tulis/proposal-14.jpg" alt="Halaman 14: Lampiran 1: fitur mengenali minat dan KreasiSankalpa" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-pp-14">Perbesar</button>
+                  </div>
+                </div>
+                <div class="lembar" style="--i: 8">
+                  <input class="lembar-cek" type="checkbox" id="pp-lembar-8" aria-label="Balik halaman 15" />
+                  <div class="muka depan">
+                    <label class="muka-klik" for="pp-lembar-8"><img src="../images/karya-tulis/proposal-15.jpg" alt="Halaman 15: Lampiran 2 dan 3: video navigasi dan lembar validasi" width="900" height="1271" loading="lazy" /></label>
+                    <button class="zoom" type="button" popovertarget="zoom-pp-15">Perbesar</button>
+                  </div>
+                  <div class="muka belakang sampul-belakang">
+                    <label class="muka-klik" for="pp-lembar-8"><strong>Kekuatan dalam Perbedaan</strong><span>Tim Nova, Sankalpa</span><small>Klik untuk kembali</small></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="buku-geser" role="group" aria-label="Proposal Usaha Sankalpa, geser untuk membaca">
+              <button type="button" popovertarget="zoom-pp-1"><img src="../images/karya-tulis/proposal-01.jpg" alt="Halaman 1: Sampul proposal usaha Sankalpa, Tim Nova" width="900" height="1271" loading="lazy" /></button>
+              <button type="button" popovertarget="zoom-pp-2"><img src="../images/karya-tulis/proposal-02.jpg" alt="Halaman 2: Deskripsi produk dan level fitur simulasi" width="900" height="1271" loading="lazy" /></button>
+              <button type="button" popovertarget="zoom-pp-3"><img src="../images/karya-tulis/proposal-03.jpg" alt="Halaman 3: Fitur mengenali minat, KreasiSankalpa, dan pengujian" width="900" height="1271" loading="lazy" /></button>
+              <button type="button" popovertarget="zoom-pp-4"><img src="../images/karya-tulis/proposal-04.jpg" alt="Halaman 4: Revenue streams, harga, dan biaya investasi" width="900" height="1271" loading="lazy" /></button>
+              <button type="button" popovertarget="zoom-pp-5"><img src="../images/karya-tulis/proposal-05.jpg" alt="Halaman 5: Biaya tetap, biaya variabel, dan asumsi pendapatan" width="900" height="1271" loading="lazy" /></button>
+              <button type="button" popovertarget="zoom-pp-6"><img src="../images/karya-tulis/proposal-06.jpg" alt="Halaman 6: Asumsi pendapatan bulan kedua dan proyeksi" width="900" height="1271" loading="lazy" /></button>
+              <button type="button" popovertarget="zoom-pp-7"><img src="../images/karya-tulis/proposal-07.jpg" alt="Halaman 7: Proyeksi pendapatan dan analisis BEP serta ROI" width="900" height="1271" loading="lazy" /></button>
+              <button type="button" popovertarget="zoom-pp-8"><img src="../images/karya-tulis/proposal-08.jpg" alt="Halaman 8: Key resources dan key partnership" width="900" height="1271" loading="lazy" /></button>
+              <button type="button" popovertarget="zoom-pp-9"><img src="../images/karya-tulis/proposal-09.jpg" alt="Halaman 9: Sumber daya, mesin, dan metode" width="900" height="1271" loading="lazy" /></button>
+              <button type="button" popovertarget="zoom-pp-10"><img src="../images/karya-tulis/proposal-10.jpg" alt="Halaman 10: Positioning, strategi pemasaran, dan channel" width="900" height="1271" loading="lazy" /></button>
+              <button type="button" popovertarget="zoom-pp-11"><img src="../images/karya-tulis/proposal-11.jpg" alt="Halaman 11: Lampiran 1: desain prototipe lanjutan" width="900" height="1271" loading="lazy" /></button>
+              <button type="button" popovertarget="zoom-pp-12"><img src="../images/karya-tulis/proposal-12.jpg" alt="Halaman 12: Lampiran 1: level 4 dan fitur simulasi" width="900" height="1271" loading="lazy" /></button>
+              <button type="button" popovertarget="zoom-pp-13"><img src="../images/karya-tulis/proposal-13.jpg" alt="Halaman 13: Lampiran 1: fitur simulasi lanjutan" width="900" height="1271" loading="lazy" /></button>
+              <button type="button" popovertarget="zoom-pp-14"><img src="../images/karya-tulis/proposal-14.jpg" alt="Halaman 14: Lampiran 1: fitur mengenali minat dan KreasiSankalpa" width="900" height="1271" loading="lazy" /></button>
+              <button type="button" popovertarget="zoom-pp-15"><img src="../images/karya-tulis/proposal-15.jpg" alt="Halaman 15: Lampiran 2 dan 3: video navigasi dan lembar validasi" width="900" height="1271" loading="lazy" /></button>
+            </div>
+            <p class="buku-petunjuk"><span class="desktop">Klik halaman kanan untuk membalik, halaman kiri untuk kembali.</span><span class="ponsel-saja">Geser ke samping, ketuk halaman untuk memperbesar.</span></p>
+          </div>
+        </div>
+      </section>
+
+      <nav class="studi-lanjut" aria-label="Halaman berikutnya">
+        <a class="lanjut-kartu" href="archipelore.html">
+          <span>Proyek berikutnya</span>
+          <strong>Archipelore</strong>
+        </a>
+        <a class="lanjut-kartu gelap" href="../index.html#kontak">
+          <span>Tertarik berdiskusi?</span>
+          <strong>Hubungi saya</strong>
+        </a>
+      </nav>
+    </div>
+
+    <div class="bukti" id="bukti-fiksi" popover aria-labelledby="judul-bukti-fiksi">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-bukti-fiksi">FIKSI, Sankalpa oleh Tim Nova</p>
+        <button class="tutup" type="button" popovertarget="bukti-fiksi" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img src="../images/sertifikat/fiksi-sankalpa.jpg" alt="Daftar peserta FIKSI yang menandai Tim Nova dengan produk Sankalpa: Game Edukatif untuk Anak Disabilitas Intelektual" width="720" height="381" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-rk-1" popover aria-labelledby="judul-zoom-rk-1">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-rk-1">Ringkasan Eksekutif Sankalpa, halaman 1 dari 8</p>
+        <button class="tutup" type="button" popovertarget="zoom-rk-1" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/ringkasan-01.jpg" alt="Halaman 1: Sampul ringkasan eksekutif Sankalpa, Tim Nova" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-rk-2" popover aria-labelledby="judul-zoom-rk-2">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-rk-2">Ringkasan Eksekutif Sankalpa, halaman 2 dari 8</p>
+        <button class="tutup" type="button" popovertarget="zoom-rk-2" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/ringkasan-02.jpg" alt="Halaman 2: Latar belakang masalah, peluang usaha, dan value propositions" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-rk-3" popover aria-labelledby="judul-zoom-rk-3">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-rk-3">Ringkasan Eksekutif Sankalpa, halaman 3 dari 8</p>
+        <button class="tutup" type="button" popovertarget="zoom-rk-3" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/ringkasan-03.jpg" alt="Halaman 3: Value propositions canvas, segmentasi pasar, dan key activities" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-rk-4" popover aria-labelledby="judul-zoom-rk-4">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-rk-4">Ringkasan Eksekutif Sankalpa, halaman 4 dari 8</p>
+        <button class="tutup" type="button" popovertarget="zoom-rk-4" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/ringkasan-04.jpg" alt="Halaman 4: Prototipe awal: tampilan pertama, tab, level 1 dan level 2" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-rk-5" popover aria-labelledby="judul-zoom-rk-5">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-rk-5">Ringkasan Eksekutif Sankalpa, halaman 5 dari 8</p>
+        <button class="tutup" type="button" popovertarget="zoom-rk-5" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/ringkasan-05.jpg" alt="Halaman 5: Prototipe awal: level 3 sampai level 5 dan eksplorasi minat" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-rk-6" popover aria-labelledby="judul-zoom-rk-6">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-rk-6">Ringkasan Eksekutif Sankalpa, halaman 6 dari 8</p>
+        <button class="tutup" type="button" popovertarget="zoom-rk-6" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/ringkasan-06.jpg" alt="Halaman 6: Fitur simulasi: gosok gigi, kancing baju, puzzle, dan sendok" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-rk-7" popover aria-labelledby="judul-zoom-rk-7">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-rk-7">Ringkasan Eksekutif Sankalpa, halaman 7 dari 8</p>
+        <button class="tutup" type="button" popovertarget="zoom-rk-7" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/ringkasan-07.jpg" alt="Halaman 7: Fitur simulasi lanjutan dan fitur eksplorasi minat" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-rk-8" popover aria-labelledby="judul-zoom-rk-8">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-rk-8">Ringkasan Eksekutif Sankalpa, halaman 8 dari 8</p>
+        <button class="tutup" type="button" popovertarget="zoom-rk-8" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/ringkasan-08.jpg" alt="Halaman 8: Halaman video prototipe Sankalpa" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-pp-1" popover aria-labelledby="judul-zoom-pp-1">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-pp-1">Proposal Usaha Sankalpa, halaman 1 dari 15</p>
+        <button class="tutup" type="button" popovertarget="zoom-pp-1" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/proposal-01.jpg" alt="Halaman 1: Sampul proposal usaha Sankalpa, Tim Nova" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-pp-2" popover aria-labelledby="judul-zoom-pp-2">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-pp-2">Proposal Usaha Sankalpa, halaman 2 dari 15</p>
+        <button class="tutup" type="button" popovertarget="zoom-pp-2" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/proposal-02.jpg" alt="Halaman 2: Deskripsi produk dan level fitur simulasi" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-pp-3" popover aria-labelledby="judul-zoom-pp-3">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-pp-3">Proposal Usaha Sankalpa, halaman 3 dari 15</p>
+        <button class="tutup" type="button" popovertarget="zoom-pp-3" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/proposal-03.jpg" alt="Halaman 3: Fitur mengenali minat, KreasiSankalpa, dan pengujian" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-pp-4" popover aria-labelledby="judul-zoom-pp-4">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-pp-4">Proposal Usaha Sankalpa, halaman 4 dari 15</p>
+        <button class="tutup" type="button" popovertarget="zoom-pp-4" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/proposal-04.jpg" alt="Halaman 4: Revenue streams, harga, dan biaya investasi" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-pp-5" popover aria-labelledby="judul-zoom-pp-5">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-pp-5">Proposal Usaha Sankalpa, halaman 5 dari 15</p>
+        <button class="tutup" type="button" popovertarget="zoom-pp-5" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/proposal-05.jpg" alt="Halaman 5: Biaya tetap, biaya variabel, dan asumsi pendapatan" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-pp-6" popover aria-labelledby="judul-zoom-pp-6">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-pp-6">Proposal Usaha Sankalpa, halaman 6 dari 15</p>
+        <button class="tutup" type="button" popovertarget="zoom-pp-6" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/proposal-06.jpg" alt="Halaman 6: Asumsi pendapatan bulan kedua dan proyeksi" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-pp-7" popover aria-labelledby="judul-zoom-pp-7">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-pp-7">Proposal Usaha Sankalpa, halaman 7 dari 15</p>
+        <button class="tutup" type="button" popovertarget="zoom-pp-7" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/proposal-07.jpg" alt="Halaman 7: Proyeksi pendapatan dan analisis BEP serta ROI" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-pp-8" popover aria-labelledby="judul-zoom-pp-8">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-pp-8">Proposal Usaha Sankalpa, halaman 8 dari 15</p>
+        <button class="tutup" type="button" popovertarget="zoom-pp-8" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/proposal-08.jpg" alt="Halaman 8: Key resources dan key partnership" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-pp-9" popover aria-labelledby="judul-zoom-pp-9">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-pp-9">Proposal Usaha Sankalpa, halaman 9 dari 15</p>
+        <button class="tutup" type="button" popovertarget="zoom-pp-9" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/proposal-09.jpg" alt="Halaman 9: Sumber daya, mesin, dan metode" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-pp-10" popover aria-labelledby="judul-zoom-pp-10">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-pp-10">Proposal Usaha Sankalpa, halaman 10 dari 15</p>
+        <button class="tutup" type="button" popovertarget="zoom-pp-10" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/proposal-10.jpg" alt="Halaman 10: Positioning, strategi pemasaran, dan channel" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-pp-11" popover aria-labelledby="judul-zoom-pp-11">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-pp-11">Proposal Usaha Sankalpa, halaman 11 dari 15</p>
+        <button class="tutup" type="button" popovertarget="zoom-pp-11" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/proposal-11.jpg" alt="Halaman 11: Lampiran 1: desain prototipe lanjutan" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-pp-12" popover aria-labelledby="judul-zoom-pp-12">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-pp-12">Proposal Usaha Sankalpa, halaman 12 dari 15</p>
+        <button class="tutup" type="button" popovertarget="zoom-pp-12" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/proposal-12.jpg" alt="Halaman 12: Lampiran 1: level 4 dan fitur simulasi" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-pp-13" popover aria-labelledby="judul-zoom-pp-13">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-pp-13">Proposal Usaha Sankalpa, halaman 13 dari 15</p>
+        <button class="tutup" type="button" popovertarget="zoom-pp-13" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/proposal-13.jpg" alt="Halaman 13: Lampiran 1: fitur simulasi lanjutan" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-pp-14" popover aria-labelledby="judul-zoom-pp-14">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-pp-14">Proposal Usaha Sankalpa, halaman 14 dari 15</p>
+        <button class="tutup" type="button" popovertarget="zoom-pp-14" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/proposal-14.jpg" alt="Halaman 14: Lampiran 1: fitur mengenali minat dan KreasiSankalpa" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-pp-15" popover aria-labelledby="judul-zoom-pp-15">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-pp-15">Proposal Usaha Sankalpa, halaman 15 dari 15</p>
+        <button class="tutup" type="button" popovertarget="zoom-pp-15" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="../images/karya-tulis/proposal-15.jpg" alt="Halaman 15: Lampiran 2 dan 3: video navigasi dan lembar validasi" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-box">
+      <p>© 2026 Karin Angelica. Dibuat dengan HTML dan CSS, tanpa JavaScript.</p>
+      <p class="flag" tabindex="0" title="Arahkan kursor untuk membaca">flag{kekuatan_dalam_perbedaan}</p>
+      <a href="#main">Kembali ke atas</a>
+    </div>
+  </footer>
+</body>
+
+</html>

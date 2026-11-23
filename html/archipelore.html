@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Archipelore, Studi Kasus Karin Angelica</title>
+  <meta name="description" content="Studi kasus Archipelore, portal web budaya 38 provinsi Indonesia dan finalis Lomba Web Design Techtopia Vol.1 2025." />
+  <link rel="icon" type="image/svg+xml" href="../images/icon/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=DM+Sans:opsz,wght@9..40,400..700&family=JetBrains+Mono:wght@500&display=swap" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/proyek.css" />
+  <link rel="stylesheet" href="../css/demo.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten utama</a>
+
+  <header class="navbar">
+    <nav class="navdiv container" aria-label="Navigasi utama">
+      <a class="logo" href="../index.html">
+        <span class="logo-mark" aria-hidden="true">K</span>
+        <span class="logo-nama">Karin Angelica</span>
+      </a>
+      <ul class="navlinks">
+        <li class="navlink"><a href="../index.html#proyek">Proyek</a></li>
+        <li class="navlink"><a href="../index.html#prestasi">Prestasi</a></li>
+        <li class="navlink"><a href="../index.html#tentang">Tentang</a></li>
+        <li class="navlink"><a href="../index.html#kontak">Kontak</a></li>
+      </ul>
+      <a class="btn btn-utama" href="../files/CV_Karin_Angelica.pdf" download>Unduh CV</a>
+    </nav>
+  </header>
+
+  <main id="main" class="studi">
+    <div class="container">
+      <a class="kembali" href="../index.html#proyek">Kembali ke semua proyek</a>
+
+      <header class="studi-head">
+        <h1>Archipelore</h1>
+        <p class="studi-lead">Portal web yang mengajak pelajar menjelajahi budaya, sejarah, rumah adat, dan kuliner dari 38 provinsi Indonesia.</p>
+        <dl class="studi-meta">
+          <div>
+            <dt>Peran</dt>
+            <dd>Founder dan leader tim</dd>
+          </div>
+          <div>
+            <dt>Tim</dt>
+            <dd>Kreasi Generasi Emas: Karin Angelica dan Grace Kirana</dd>
+          </div>
+          <div>
+            <dt>Teknologi</dt>
+            <dd>HTML, CSS, JavaScript</dd>
+          </div>
+          <div>
+            <dt>Hasil</dt>
+            <dd><mark>Finalis Techtopia Vol.1</mark>, skor 78,83</dd>
+          </div>
+        </dl>
+      </header>
+
+      <figure class="studi-gambar">
+        <div class="browser">
+          <div class="browser-bar">
+            <div class="browser-titik" aria-hidden="true"><span></span><span></span><span></span></div>
+            <p class="browser-alamat">Archipelore, demo langsung</p>
+            <a class="browser-buka" href="../demo/archipelore/html/index.html" target="_blank" rel="noopener">Buka layar penuh</a>
+          </div>
+          <iframe class="iframe-besar" src="../demo/archipelore/html/index.html" title="Demo langsung Archipelore"></iframe>
+        </div>
+        <figcaption>Demo ini menjalankan kode asli Archipelore. Coba klik menu, cari provinsi, atau buka kartu provinsi. Kode lengkapnya ada di <a href="https://github.com/karinangelica/Techtopia-Competition---Archipelore-Website" target="_blank" rel="noopener">GitHub</a>.</figcaption>
+      </figure>
+
+      <div class="studi-body">
+        <nav class="studi-nav" aria-label="Bagian studi kasus">
+          <p>Di halaman ini</p>
+          <ol>
+            <li><a href="#masalah">Masalah</a></li>
+            <li><a href="#solusi">Solusi</a></li>
+            <li><a href="#fitur">Fitur utama</a></li>
+            <li><a href="#peran">Peran saya</a></li>
+            <li><a href="#hasil">Hasil</a></li>
+          </ol>
+        </nav>
+
+        <div class="studi-konten">
+          <section id="masalah" aria-labelledby="h-masalah">
+            <h2 id="h-masalah">Masalah</h2>
+            <p>
+              Setiap provinsi di Indonesia menyimpan budaya, alam, dan sejarah yang layak dipelajari. Kami ingin
+              ada satu tempat yang ringan dan menarik bagi pelajar untuk mengenal semuanya, tanpa harus membuka
+              banyak sumber sekaligus.
+            </p>
+            <p>
+              Lomba Web Design Techtopia Vol.1 mengangkat tema “START IT: Spark Talent and Rise Through Innovation
+              &amp; Technology”. Kami melihatnya sebagai kesempatan untuk mengenalkan Indonesia lewat dunia digital.
+            </p>
+          </section>
+
+          <section id="solusi" aria-labelledby="h-solusi">
+            <h2 id="h-solusi">Solusi</h2>
+            <p>
+              Archipelore adalah portal dengan empat halaman utama: Beranda untuk menjelajah provinsi, Berita budaya,
+              Tentang Kami, dan Kontak, ditambah halaman Kebijakan &amp; Privasi.
+            </p>
+            <p>
+              Data 38 provinsi disimpan dalam satu array JavaScript, lalu ditampilkan sebagai kartu secara otomatis.
+              Dengan cara ini, menambah atau memperbaiki konten cukup dilakukan di satu tempat tanpa mengubah HTML.
+            </p>
+          </section>
+
+          <section id="fitur" aria-labelledby="h-fitur">
+            <h2 id="h-fitur">Fitur utama</h2>
+            <ul>
+              <li><strong>Kartu 38 provinsi</strong> lengkap dengan foto, ibu kota, dan label wilayah.</li>
+              <li><strong>Pencarian dan filter wilayah</strong> untuk Sumatera, Jawa, Kalimantan, Sulawesi, Nusa Tenggara, Maluku, dan Papua, disertai jumlah provinsi yang sedang tampil.</li>
+              <li><strong>Jendela detail</strong> berisi sejarah, budaya, rumah adat, dan makanan khas, dengan tautan ke sumber Wikipedia.</li>
+              <li><strong>Halaman berita budaya</strong> dan formulir kontak untuk pengunjung.</li>
+            </ul>
+            <figure>
+              <img src="../images/proyek/archipelore-provinsi.jpg" alt="Bagian 38 Provinsi Indonesia dengan kolom pencarian, tombol filter wilayah, dan kartu provinsi Aceh, Sumatera Utara, Sumatera Barat, dan Riau" width="1200" height="750" loading="lazy" />
+              <figcaption>Pencarian, filter wilayah, dan kartu provinsi.</figcaption>
+            </figure>
+          </section>
+
+          <section id="peran" aria-labelledby="h-peran">
+            <h2 id="h-peran">Peran saya</h2>
+            <p>
+              Sebagai founder dan leader, saya memimpin tim dan memastikan setiap konten budaya tersampaikan
+              dengan jelas dan edukatif. Saya juga menyusun struktur halaman serta menulis kode HTML, CSS, dan
+              JavaScript-nya. Grace Kirana, co-founder, mengatur strategi konten digital.
+            </p>
+          </section>
+
+          <section id="hasil" aria-labelledby="h-hasil">
+            <h2 id="h-hasil">Hasil</h2>
+            <p>
+              Archipelore terpilih sebagai salah satu dari enam finalis Lomba Web Design Techtopia Vol.1 dengan
+              skor 78,83. Lomba ini diselenggarakan HMJ Teknik Informatika Universitas Pendidikan Ganesha pada
+              20 September sampai 11 Oktober 2025.
+            </p>
+            <button class="btn-bukti" type="button" popovertarget="bukti-techtopia">Lihat bukti</button>
+          </section>
+        </div>
+      </div>
+
+      <nav class="studi-lanjut" aria-label="Halaman berikutnya">
+        <a class="lanjut-kartu" href="sankalpa.html">
+          <span>Proyek berikutnya</span>
+          <strong>Sankalpa</strong>
+        </a>
+        <a class="lanjut-kartu gelap" href="../index.html#kontak">
+          <span>Tertarik berdiskusi?</span>
+          <strong>Hubungi saya</strong>
+        </a>
+      </nav>
+    </div>
+
+    <div class="bukti" id="bukti-techtopia" popover aria-labelledby="judul-bukti-techtopia">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-bukti-techtopia">Techtopia Vol.1 2025, finalis web design</p>
+        <button class="tutup" type="button" popovertarget="bukti-techtopia" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img src="../images/sertifikat/techtopia-2025.jpg" alt="Piagam penghargaan Lomba Web Design Techtopia Vol.1 untuk Karin Angelica" width="1280" height="719" loading="lazy" />
+        <img src="../images/sertifikat/techtopia-finalis.jpg" alt="Pengumuman finalis Lomba Web Design Techtopia, Tim Kreasi Generasi Emas dari SMA Katolik Santu Petrus Pontianak dengan skor 78,83" width="738" height="1600" loading="lazy" />
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-box">
+      <p>© 2026 Karin Angelica. Halaman portfolio ini dibuat hanya dengan HTML dan CSS.</p>
+      <p class="flag" tabindex="0" title="Arahkan kursor untuk membaca">flag{studi_kasus_selesai}</p>
+      <a href="#main">Kembali ke atas</a>
+    </div>
+  </footer>
+</body>
+
+</html>
