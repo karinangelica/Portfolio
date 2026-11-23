@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Karin Angelica</title>
+  <meta name="description" content="Portfolio Karin Angelica, mahasiswa Computer Science BINUS University. Demo proyek web, game edukasi Sankalpa, keamanan siber, dan 12 kompetisi sejak 2023." />
+  <link rel="icon" type="image/svg+xml" href="images/icon/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=DM+Sans:opsz,wght@9..40,400..700&family=JetBrains+Mono:wght@500&display=swap" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/demo.css" />
+  <link rel="stylesheet" href="css/buku.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten utama</a>
+
+  <header class="navbar">
+    <nav class="navdiv container" aria-label="Navigasi utama">
+      <a class="logo" href="#top">
+        <span class="logo-mark" aria-hidden="true">K</span>
+        <span class="logo-nama">Karin Angelica</span>
+      </a>
+      <ul class="navlinks">
+        <li class="navlink"><a href="#proyek">Proyek</a></li>
+        <li class="navlink"><a href="#prestasi">Prestasi</a></li>
+        <li class="navlink"><a href="#tentang">Tentang</a></li>
+        <li class="navlink"><a href="#kontak">Kontak</a></li>
+      </ul>
+      <a class="btn btn-utama" href="files/CV_Karin_Angelica.pdf" download>Unduh CV</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-box container">
+        <div class="hero-text">
+          <h1 class="hero-nama"><span>Karin</span> <span>Angelica</span></h1>
+          <p class="hero-lead">
+            Hai! Saya mahasiswa tahun pertama Computer Science di BINUS University.
+            Saat SMA, saya suka mengubah masalah nyata menjadi produk, mulai dari portal budaya
+            dan game edukasi untuk anak berkebutuhan khusus. Sekarang, saya sedang tertarik ke
+            tantangan keamanan siber di CTF.
+          </p>
+          <div class="hero-aksi">
+            <a class="btn btn-utama" href="#proyek">Lihat proyek saya</a>
+            <a class="btn btn-garis" href="files/CV_Karin_Angelica.pdf" download>Unduh CV (PDF)</a>
+          </div>
+        </div>
+
+        <div class="hero-badge">
+          <div class="kartu-gantung">
+            <div class="kartu">
+              <span class="kartu-klip" aria-hidden="true"></span>
+              <p class="kartu-atas">Hi!</p>
+              <div class="kartu-foto">
+                <img src="images/profile/karin.jpg" alt="Karin Angelica tersenyum sambil mengacungkan tanda peace ke kamera" width="720" height="900" />
+              </div>
+              <div class="kartu-isi">
+                <p class="kartu-nama">Karin Angelica</p>
+                <p class="kartu-info">Computer Science, BINUS University</p>
+                <p class="kartu-ctf"><span>12 kompetisi sejak 2023</span> <code>clover @csc</code></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proyek" id="proyek" aria-labelledby="judul-proyek">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="judul-proyek">Proyek yang bisa dicoba</h2>
+          <p>Pilih proyek, lalu coba langsung di halaman ini. Demo web memakai kode asli dari GitHub saya, tanpa diubah.</p>
+        </div>
+
+        <div class="demo-tabs">
+          <input class="tab-radio" type="radio" name="demo" id="tab-archipelore" checked />
+          <input class="tab-radio" type="radio" name="demo" id="tab-sankalpa" />
+          <input class="tab-radio" type="radio" name="demo" id="tab-tokoku" />
+          <input class="tab-radio" type="radio" name="demo" id="tab-toko" />
+          <input class="tab-radio" type="radio" name="demo" id="tab-password" />
+          <input class="tab-radio" type="radio" name="demo" id="tab-thunkable" />
+
+          <div class="tab-list">
+            <label for="tab-archipelore">Archipelore<span>Portal budaya</span></label>
+            <label for="tab-sankalpa">Sankalpa<span>Game edukasi</span></label>
+            <label for="tab-tokoku">TokoKu Manager<span>Dashboard toko</span></label>
+            <label for="tab-toko">Online Shop<span>Web pertama</span></label>
+            <label for="tab-password">Password Checker<span>Python</span></label>
+            <label for="tab-thunkable">Game Thunkable<span>Aplikasi mobile</span></label>
+          </div>
+
+          <div class="tab-panels">
+            <article class="demo-panel" id="panel-archipelore">
+              <div class="browser">
+                <div class="browser-bar">
+                  <div class="browser-titik" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <p class="browser-alamat">Archipelore, demo langsung</p>
+                  <a class="browser-buka" href="demo/archipelore/html/index.html" target="_blank" rel="noopener">Buka layar penuh</a>
+                </div>
+                <iframe src="demo/archipelore/html/index.html" title="Demo langsung Archipelore" loading="lazy"></iframe>
+              </div>
+              <div class="demo-info">
+                <div class="demo-teks">
+                  <h3>Archipelore</h3>
+                  <ul class="tag-list" aria-label="Teknologi">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                  </ul>
+                  <p>
+                    Portal web untuk menjelajahi budaya 38 provinsi Indonesia. Coba cari sebuah provinsi, saring per
+                    wilayah, lalu klik kartunya untuk membaca sejarah, rumah adat, dan makanan khasnya.
+                  </p>
+                </div>
+                <div class="demo-aksi">
+                  <p class="proyek-hasil"><mark>Finalis Lomba Web Design Techtopia Vol.1</mark><span>Universitas Pendidikan Ganesha, 2025</span></p>
+                  <div class="demo-link">
+                    <a class="link-garis" href="html/archipelore.html">Baca studi kasus</a>
+                    <a class="link-garis" href="https://github.com/karinangelica/Techtopia-Competition---Archipelore-Website" target="_blank" rel="noopener">Lihat kode di GitHub</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="demo-panel" id="panel-sankalpa">
+              <div class="buku-wrap">
+                <div class="buku" role="group" aria-label="Ringkasan Eksekutif Sankalpa, 8 halaman">
+                  <div class="buku-kertas" style="--n: 4">
+                    <div class="lembar" style="--i: 1">
+                      <input class="lembar-cek" type="checkbox" id="rk-lembar-1" aria-label="Balik halaman 1 dan 2" />
+                      <div class="muka depan">
+                        <label class="muka-klik" for="rk-lembar-1"><img src="images/karya-tulis/ringkasan-01.jpg" alt="Halaman 1: Sampul ringkasan eksekutif Sankalpa, Tim Nova" width="900" height="1271" loading="lazy" /></label>
+                        <button class="zoom" type="button" popovertarget="zoom-rk-1">Perbesar</button>
+                      </div>
+                      <div class="muka belakang">
+                        <label class="muka-klik" for="rk-lembar-1"><img src="images/karya-tulis/ringkasan-02.jpg" alt="Halaman 2: Latar belakang masalah, peluang usaha, dan value propositions" width="900" height="1271" loading="lazy" /></label>
+                        <button class="zoom" type="button" popovertarget="zoom-rk-2">Perbesar</button>
+                      </div>
+                    </div>
+                    <div class="lembar" style="--i: 2">
+                      <input class="lembar-cek" type="checkbox" id="rk-lembar-2" aria-label="Balik halaman 3 dan 4" />
+                      <div class="muka depan">
+                        <label class="muka-klik" for="rk-lembar-2"><img src="images/karya-tulis/ringkasan-03.jpg" alt="Halaman 3: Value propositions canvas, segmentasi pasar, dan key activities" width="900" height="1271" loading="lazy" /></label>
+                        <button class="zoom" type="button" popovertarget="zoom-rk-3">Perbesar</button>
+                      </div>
+                      <div class="muka belakang">
+                        <label class="muka-klik" for="rk-lembar-2"><img src="images/karya-tulis/ringkasan-04.jpg" alt="Halaman 4: Prototipe awal: tampilan pertama, tab, level 1 dan level 2" width="900" height="1271" loading="lazy" /></label>
+                        <button class="zoom" type="button" popovertarget="zoom-rk-4">Perbesar</button>
+                      </div>
+                    </div>
+                    <div class="lembar" style="--i: 3">
+                      <input class="lembar-cek" type="checkbox" id="rk-lembar-3" aria-label="Balik halaman 5 dan 6" />
+                      <div class="muka depan">
+                        <label class="muka-klik" for="rk-lembar-3"><img src="images/karya-tulis/ringkasan-05.jpg" alt="Halaman 5: Prototipe awal: level 3 sampai level 5 dan eksplorasi minat" width="900" height="1271" loading="lazy" /></label>
+                        <button class="zoom" type="button" popovertarget="zoom-rk-5">Perbesar</button>
+                      </div>
+                      <div class="muka belakang">
+                        <label class="muka-klik" for="rk-lembar-3"><img src="images/karya-tulis/ringkasan-06.jpg" alt="Halaman 6: Fitur simulasi: gosok gigi, kancing baju, puzzle, dan sendok" width="900" height="1271" loading="lazy" /></label>
+                        <button class="zoom" type="button" popovertarget="zoom-rk-6">Perbesar</button>
+                      </div>
+                    </div>
+                    <div class="lembar" style="--i: 4">
+                      <input class="lembar-cek" type="checkbox" id="rk-lembar-4" aria-label="Balik halaman 7 dan 8" />
+                      <div class="muka depan">
+                        <label class="muka-klik" for="rk-lembar-4"><img src="images/karya-tulis/ringkasan-07.jpg" alt="Halaman 7: Fitur simulasi lanjutan dan fitur eksplorasi minat" width="900" height="1271" loading="lazy" /></label>
+                        <button class="zoom" type="button" popovertarget="zoom-rk-7">Perbesar</button>
+                      </div>
+                      <div class="muka belakang">
+                        <label class="muka-klik" for="rk-lembar-4"><img src="images/karya-tulis/ringkasan-08.jpg" alt="Halaman 8: Halaman video prototipe Sankalpa" width="900" height="1271" loading="lazy" /></label>
+                        <button class="zoom" type="button" popovertarget="zoom-rk-8">Perbesar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="buku-geser" role="group" aria-label="Ringkasan Eksekutif Sankalpa, geser untuk membaca">
+                  <button type="button" popovertarget="zoom-rk-1"><img src="images/karya-tulis/ringkasan-01.jpg" alt="Halaman 1: Sampul ringkasan eksekutif Sankalpa, Tim Nova" width="900" height="1271" loading="lazy" /></button>
+                  <button type="button" popovertarget="zoom-rk-2"><img src="images/karya-tulis/ringkasan-02.jpg" alt="Halaman 2: Latar belakang masalah, peluang usaha, dan value propositions" width="900" height="1271" loading="lazy" /></button>
+                  <button type="button" popovertarget="zoom-rk-3"><img src="images/karya-tulis/ringkasan-03.jpg" alt="Halaman 3: Value propositions canvas, segmentasi pasar, dan key activities" width="900" height="1271" loading="lazy" /></button>
+                  <button type="button" popovertarget="zoom-rk-4"><img src="images/karya-tulis/ringkasan-04.jpg" alt="Halaman 4: Prototipe awal: tampilan pertama, tab, level 1 dan level 2" width="900" height="1271" loading="lazy" /></button>
+                  <button type="button" popovertarget="zoom-rk-5"><img src="images/karya-tulis/ringkasan-05.jpg" alt="Halaman 5: Prototipe awal: level 3 sampai level 5 dan eksplorasi minat" width="900" height="1271" loading="lazy" /></button>
+                  <button type="button" popovertarget="zoom-rk-6"><img src="images/karya-tulis/ringkasan-06.jpg" alt="Halaman 6: Fitur simulasi: gosok gigi, kancing baju, puzzle, dan sendok" width="900" height="1271" loading="lazy" /></button>
+                  <button type="button" popovertarget="zoom-rk-7"><img src="images/karya-tulis/ringkasan-07.jpg" alt="Halaman 7: Fitur simulasi lanjutan dan fitur eksplorasi minat" width="900" height="1271" loading="lazy" /></button>
+                  <button type="button" popovertarget="zoom-rk-8"><img src="images/karya-tulis/ringkasan-08.jpg" alt="Halaman 8: Halaman video prototipe Sankalpa" width="900" height="1271" loading="lazy" /></button>
+                </div>
+                <p class="buku-petunjuk"><span class="desktop">Klik halaman kanan untuk membalik, halaman kiri untuk kembali.</span><span class="ponsel-saja">Geser ke samping, ketuk halaman untuk memperbesar.</span></p>
+              </div>
+              <div class="demo-info">
+                <div class="demo-teks">
+                  <h3>Sankalpa</h3>
+                  <ul class="tag-list" aria-label="Teknologi">
+                    <li>C#</li>
+                    <li>Unity</li>
+                  </ul>
+                  <p>
+                    Game edukasi 2D untuk anak dengan disabilitas intelektual usia 5–17 tahun. Anak berlatih kegiatan
+                    sehari-hari, seperti menggosok gigi, mengancing baju, dan menabung, sambil mengenal budaya Pontianak:
+                    baju kurung, kue bingke, tengkawang, sampai alat musik sape.
+                  </p>
+                  <p>Buku di bawah adalah ringkasan eksekutif yang kami susun untuk lomba. Silakan dibalik.</p>
+                </div>
+                <div class="demo-aksi">
+                  <p class="proyek-hasil"><mark>Semifinalis nasional FIKSI</mark><span>Juara 2 tingkat Provinsi Kalimantan Barat</span></p>
+                  <div class="demo-link">
+                    <a class="link-garis" href="html/sankalpa.html#video">Tonton video game</a>
+                    <a class="link-garis" href="html/sankalpa.html#layar">Jelajahi layar game</a>
+                    <a class="link-garis" href="html/sankalpa.html">Baca studi kasus</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="demo-panel" id="panel-tokoku">
+              <div class="browser">
+                <div class="browser-bar">
+                  <div class="browser-titik" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <p class="browser-alamat">Google Sheets, Cempaka Baru</p>
+                  <a class="browser-buka" href="demo/tokoku/index.html" target="_blank" rel="noopener">Buka layar penuh</a>
+                </div>
+                <iframe src="demo/tokoku/index.html" title="Demo langsung TokoKu Manager di Google Sheets" loading="lazy"></iframe>
+              </div>
+              <div class="demo-info">
+                <div class="demo-teks">
+                  <h3>TokoKu Manager</h3>
+                  <ul class="tag-list" aria-label="Teknologi">
+                    <li>Google Apps Script</li>
+                    <li>Google Sheets</li>
+                    <li>JavaScript</li>
+                    <li>HTML &amp; CSS</li>
+                  </ul>
+                  <p>
+                    Dibuat untuk minimarket ayah saya. Lewat menu dan panel di dalam Google Sheets, toko bisa mencatat
+                    stok, menghitung harga jual GrabMart dan WhatsApp Business secara otomatis, mendapat peringatan stok
+                    tipis atau kosong, dan menyimpan kontak sales serta template balasan WhatsApp.
+                  </p>
+                  <p>
+                    Di demo ini, Sidebar.html asli saya berjalan di atas tiruan Google Sheets. Coba tambah
+                    stok di tab Stok, lalu lihat selnya ikut berubah di sheet.
+                  </p>
+                </div>
+                <div class="demo-aksi">
+                  <p class="proyek-hasil"><span>Harga GrabMart dihitung dengan rumus harga ÷ 0,92 × (1 + margin), lalu dibulatkan ke ratusan.</span></p>
+                  <div class="demo-link">
+                    <a class="link-garis" href="https://github.com/karinangelica/Minimarket-Dashboard" target="_blank" rel="noopener">Lihat kode di GitHub</a>
+                    <a class="link-garis" href="https://docs.google.com/spreadsheets/d/1eFOTr-jamfxkPlONRghPz_pju09xStn0mQVGslREkDg/edit?usp=sharing" target="_blank" rel="noopener">Buka Google Sheets asli</a>
+                  </div>
+                  <p class="demo-catatan">Data di demo adalah data contoh dan kembali seperti semula saat dimuat ulang. Spreadsheet asli bisa dilihat, tapi tidak bisa diubah.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="demo-panel" id="panel-toko">
+              <div class="browser">
+                <div class="browser-bar">
+                  <div class="browser-titik" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <p class="browser-alamat">Archipelore Online Shop, demo langsung</p>
+                  <a class="browser-buka" href="demo/online-shop/index.html" target="_blank" rel="noopener">Buka layar penuh</a>
+                </div>
+                <iframe src="demo/online-shop/index.html" title="Demo langsung Archipelore Online Shop" loading="lazy"></iframe>
+              </div>
+              <div class="demo-info">
+                <div class="demo-teks">
+                  <h3>Archipelore Online Shop</h3>
+                  <ul class="tag-list" aria-label="Teknologi">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                  </ul>
+                  <p>
+                    Proyek web pertama saya: toko online dengan kategori pakaian, figurine, dan sneakers. Halamannya
+                    disusun dengan frameset, jadi menu di kiri bisa membuka katalog tiap brand tanpa memuat ulang header.
+                  </p>
+                  <p>Dibandingkan Archipelore, proyek ini memperlihatkan seberapa jauh cara saya menulis kode berkembang.</p>
+                </div>
+                <div class="demo-aksi">
+                  <div class="demo-link">
+                    <a class="link-garis" href="https://github.com/karinangelica/Archipelore-Online-Shop" target="_blank" rel="noopener">Lihat kode di GitHub</a>
+                  </div>
+                  <p class="demo-catatan">Foto produk dimuat langsung dari situs tiap brand, jadi butuh koneksi internet.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="demo-panel" id="panel-password">
+              <div class="browser terminal">
+                <div class="browser-bar">
+                  <div class="browser-titik" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <p class="browser-alamat">python password_tool.py</p>
+                  <a class="browser-buka" href="demo/password/index.html" target="_blank" rel="noopener">Buka layar penuh</a>
+                </div>
+                <iframe src="demo/password/index.html" title="Demo langsung Password Security Checker" loading="lazy"></iframe>
+              </div>
+              <div class="demo-info">
+                <div class="demo-teks">
+                  <h3>Password Security Checker</h3>
+                  <ul class="tag-list" aria-label="Teknologi">
+                    <li>Python</li>
+                    <li>Keamanan siber</li>
+                  </ul>
+                  <p>
+                    Alat command-line untuk mengukur kekuatan kata sandi. Entropinya dihitung dengan rumus
+                    E = L × log2(R), lalu dicek terhadap daftar kata sandi yang paling sering ditebak penyerang.
+                    Alat ini juga bisa membuat kata sandi acak yang aman secara kriptografis.
+                  </p>
+                  <p>Di demo ini, file Python aslinya dijalankan langsung di browser lewat Pyodide. Coba ketik sebuah kata sandi.</p>
+                </div>
+                <div class="demo-aksi">
+                  <div class="demo-link">
+                    <a class="link-garis" href="https://github.com/karinangelica/password" target="_blank" rel="noopener">Lihat kode di GitHub</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="demo-panel" id="panel-thunkable">
+              <div class="ponsel-grup">
+                <div class="ponsel">
+                  <div class="ponsel-layar ponsel-nian">
+                    <strong>Nian's Wrath</strong>
+                    <span>Game bertema liong Tahun Baru Imlek</span>
+                  </div>
+                  <a href="https://github.com/karinangelica/Nian-s-Wrath" target="_blank" rel="noopener">Lihat proyek</a>
+                </div>
+                <div class="ponsel">
+                  <div class="ponsel-layar ponsel-ikan">
+                    <strong>Fish Diving</strong>
+                    <span>Tangkap minuman sebelum ikan mendapatkannya</span>
+                  </div>
+                  <a href="https://github.com/karinangelica/Fish-Diving" target="_blank" rel="noopener">Lihat proyek</a>
+                </div>
+                <div class="ponsel">
+                  <div class="ponsel-layar ponsel-list">
+                    <strong>Thunkable Lists</strong>
+                    <span>Kumpulan proyek latihan aplikasi</span>
+                  </div>
+                  <a href="https://github.com/karinangelica/Thunkable-lists" target="_blank" rel="noopener">Lihat proyek</a>
+                </div>
+              </div>
+              <div class="demo-info">
+                <div class="demo-teks">
+                  <h3>Game dan aplikasi Thunkable</h3>
+                  <ul class="tag-list" aria-label="Teknologi">
+                    <li>Thunkable</li>
+                    <li>Aplikasi mobile</li>
+                  </ul>
+                  <p>
+                    Sebelum menulis kode, saya belajar logika aplikasi lewat Thunkable. Dari sana lahir Nian's Wrath,
+                    game yang terinspirasi liong Tahun Baru Imlek, dan Fish Diving, game menangkap minuman sebelum
+                    ikan mendapatkannya.
+                  </p>
+                </div>
+                <div class="demo-aksi">
+                  <p class="demo-catatan">Proyek Thunkable dibuka lewat tautan di repository GitHub masing-masing.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="prestasi" id="prestasi" aria-labelledby="judul-prestasi">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="judul-prestasi">Prestasi dan kompetisi</h2>
+          <p>
+            12 kompetisi dalam tiga tahun terakhir, dari CTF internasional sampai olimpiade ekonomi.
+            Hasil yang ditandai <mark>kuning</mark> adalah penghargaan. Klik gambar sertifikat untuk memperbesarnya.
+          </p>
+        </div>
+
+        <div class="tabel-wrap">
+          <table class="tabel-prestasi">
+            <caption class="sr-only">Daftar kompetisi Karin Angelica tahun 2023 sampai 2026</caption>
+            <thead>
+              <tr>
+                <th scope="col">Kompetisi</th>
+                <th scope="col">Penyelenggara</th>
+                <th scope="col">Hasil</th>
+                <th scope="col">Bukti</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="grup">
+                <th scope="colgroup" colspan="4">Internasional</th>
+              </tr>
+              <tr>
+                <td class="td-kompetisi"><strong>Virtual Innovation Competition 2025</strong><span class="sub">Proyek Tengkawang Kiss, pelembap bibir alami dari tengkawang khas Kalimantan</span></td>
+                <td class="td-penyelenggara">UiTM Kelantan dan DIGIT360, Malaysia</td>
+                <td class="td-hasil"><mark>Medali emas (Young Scientist)</mark></td>
+                <td class="td-bukti"><button class="thumb-bukti" type="button" popovertarget="bukti-vic"><img src="images/sertifikat/thumb/vic-2025.jpg" alt="" width="320" height="454" loading="lazy" /><span class="sr-only">Perbesar bukti Virtual Innovation Competition 2025, medali emas</span></button></td>
+              </tr>
+              <tr>
+                <td class="td-kompetisi"><strong>scriptCTF 2026</strong><span class="sub">Bersama tim pls2digit</span></td>
+                <td class="td-penyelenggara">ScriptSorcerers</td>
+                <td class="td-hasil">Peringkat 153 dari 1.249 tim</td>
+                <td class="td-bukti"><button class="thumb-bukti" type="button" popovertarget="bukti-scriptctf"><img src="images/sertifikat/thumb/scriptctf-2026.jpg" alt="" width="320" height="172" loading="lazy" /><span class="sr-only">Perbesar bukti scriptCTF 2026, peringkat 153 dari 1.249</span></button></td>
+              </tr>
+              <tr>
+                <td class="td-kompetisi"><strong>Kali Team CTF 2026</strong><span class="sub">Bersama tim pls2digit</span></td>
+                <td class="td-penyelenggara">Kali Team</td>
+                <td class="td-hasil">Peserta</td>
+                <td class="td-bukti"><button class="thumb-bukti" type="button" popovertarget="bukti-kali"><img src="images/sertifikat/thumb/kali-ctf-2026.jpg" alt="" width="320" height="213" loading="lazy" /><span class="sr-only">Perbesar bukti Kali Team CTF 2026</span></button></td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="grup">
+                <th scope="colgroup" colspan="4">Nasional</th>
+              </tr>
+              <tr>
+                <td class="td-kompetisi"><strong>Festival Inovasi dan Kewirausahaan Siswa (FIKSI)</strong><span class="sub">Proyek Sankalpa bersama Tim Nova</span></td>
+                <td class="td-penyelenggara">Pusat Prestasi Nasional</td>
+                <td class="td-hasil"><mark>Semifinalis, juara 2 provinsi</mark></td>
+                <td class="td-bukti"><button class="thumb-bukti" type="button" popovertarget="bukti-fiksi"><img src="images/sertifikat/thumb/fiksi-sankalpa.jpg" alt="" width="320" height="169" loading="lazy" /><span class="sr-only">Perbesar bukti FIKSI, Sankalpa oleh Tim Nova</span></button></td>
+              </tr>
+              <tr>
+                <td class="td-kompetisi"><strong>Game Analysis Creative Challenge of Ideas 2024</strong><span class="sub">GACCI, BeeFest 2024</span></td>
+                <td class="td-penyelenggara">School of Computer Science, BINUS University</td>
+                <td class="td-hasil"><mark>Medali perunggu</mark></td>
+                <td class="td-bukti"><button class="thumb-bukti" type="button" popovertarget="bukti-gacci"><img src="images/sertifikat/thumb/gacci-2024.jpg" alt="" width="320" height="223" loading="lazy" /><span class="sr-only">Perbesar bukti GACCI 2024, medali perunggu</span></button></td>
+              </tr>
+              <tr>
+                <td class="td-kompetisi"><strong>Investor Protection Month 2025</strong><span class="sub">Lomba video pendek</span></td>
+                <td class="td-penyelenggara">Indonesia SIPF</td>
+                <td class="td-hasil"><mark>Juara 2</mark> dan penerima dana CSR</td>
+                <td class="td-bukti"><button class="thumb-bukti" type="button" popovertarget="bukti-ipm"><img src="images/sertifikat/thumb/ipm-2025.jpg" alt="" width="320" height="180" loading="lazy" /><span class="sr-only">Perbesar bukti Investor Protection Month 2025, juara 2</span></button></td>
+              </tr>
+              <tr>
+                <td class="td-kompetisi"><strong>Techtopia Vol.1 2025</strong><span class="sub">Lomba Web Design dengan proyek Archipelore</span></td>
+                <td class="td-penyelenggara">Universitas Pendidikan Ganesha</td>
+                <td class="td-hasil"><mark>Finalis</mark></td>
+                <td class="td-bukti"><button class="thumb-bukti" type="button" popovertarget="bukti-techtopia"><img src="images/sertifikat/thumb/techtopia-2025.jpg" alt="" width="320" height="180" loading="lazy" /><span class="thumb-tambah" aria-hidden="true">+1</span><span class="sr-only">Perbesar bukti Techtopia Vol.1 2025, finalis web design</span></button></td>
+              </tr>
+              <tr>
+                <td class="td-kompetisi"><strong>NASFIA 2023</strong><span class="sub">National Science Fair for Indonesian Adolescents, riset PETVIA tentang teh daun pepaya, bunga telang, dan stevia</span></td>
+                <td class="td-penyelenggara">Indonesia Scientific Society</td>
+                <td class="td-hasil">Peserta</td>
+                <td class="td-bukti"><button class="thumb-bukti" type="button" popovertarget="bukti-nasfia"><img src="images/sertifikat/thumb/nasfia-2023.jpg" alt="" width="320" height="167" loading="lazy" /><span class="sr-only">Perbesar bukti NASFIA 2023, riset PETVIA</span></button></td>
+              </tr>
+              <tr>
+                <td class="td-kompetisi"><strong>Kompetisi Sains Ruangguru</strong><span class="sub">Bidang ekonomi (2024) dan matematika (2025)</span></td>
+                <td class="td-penyelenggara">Ruangguru</td>
+                <td class="td-hasil">Peserta</td>
+                <td class="td-bukti"><button class="thumb-bukti" type="button" popovertarget="bukti-ksr"><img src="images/sertifikat/thumb/ksr-2024.jpg" alt="" width="320" height="199" loading="lazy" /><span class="thumb-tambah" aria-hidden="true">+1</span><span class="sr-only">Perbesar bukti Kompetisi Sains Ruangguru 2024 dan 2025</span></button></td>
+              </tr>
+              <tr>
+                <td class="td-kompetisi"><strong>Olimpiade Asuransi dan Aktuaria 2025</strong><span class="sub">Kategori asuransi</span></td>
+                <td class="td-penyelenggara">STMA Trisakti</td>
+                <td class="td-hasil">Peserta</td>
+                <td class="td-bukti"><button class="thumb-bukti" type="button" popovertarget="bukti-stma"><img src="images/sertifikat/thumb/stma-2025.jpg" alt="" width="320" height="199" loading="lazy" /><span class="sr-only">Perbesar bukti Olimpiade Asuransi dan Aktuaria 2025</span></button></td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="grup">
+                <th scope="colgroup" colspan="4">Provinsi dan kota</th>
+              </tr>
+              <tr>
+                <td class="td-kompetisi"><strong>Cerdas Cermat IT Screen14 2025</strong><span class="sub">Tema Unlocking the Future with AI and Cybersecurity</span></td>
+                <td class="td-penyelenggara">Universitas Tanjungpura</td>
+                <td class="td-hasil"><mark>Juara 2</mark></td>
+                <td class="td-bukti"><button class="thumb-bukti" type="button" popovertarget="bukti-screen14"><img src="images/sertifikat/thumb/screen14-2025.jpg" alt="" width="320" height="228" loading="lazy" /><span class="sr-only">Perbesar bukti Cerdas Cermat IT Screen14 2025, juara 2</span></button></td>
+              </tr>
+              <tr>
+                <td class="td-kompetisi"><strong>Trisakti Economic and Accounting Competition</strong><span class="sub">Tingkat provinsi</span></td>
+                <td class="td-penyelenggara">Trisakti School of Management</td>
+                <td class="td-hasil"><mark>Juara harapan 2</mark></td>
+                <td class="td-bukti"><button class="thumb-bukti" type="button" popovertarget="bukti-teac"><img src="images/sertifikat/thumb/teac-foto.jpg" alt="" width="320" height="180" loading="lazy" /><span class="sr-only">Perbesar bukti Trisakti Economic and Accounting Competition, juara harapan 2</span></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="tentang" id="tentang" aria-labelledby="judul-tentang">
+      <div class="container tentang-grid">
+        <div class="tentang-kiri">
+          <h2 id="judul-tentang">Tentang saya</h2>
+          <dl class="fakta">
+            <div>
+              <dt>Asal</dt>
+              <dd>Pontianak, Kalimantan Barat</dd>
+            </div>
+            <div>
+              <dt>Kuliah</dt>
+              <dd>Computer Science, BINUS University (2026–2030)</dd>
+            </div>
+            <div>
+              <dt>SMA</dt>
+              <dd>SMA Katolik Santu Petrus, peminatan IEKM dan IT, rata-rata nilai 90,17</dd>
+            </div>
+            <div>
+              <dt>Komunitas</dt>
+              <dd>Cyber Security Community BINUS</dd>
+            </div>
+            <div>
+              <dt>Bahasa</dt>
+              <dd>Indonesia dan Inggris</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="tentang-kanan">
+          <p class="tentang-lead">Saya besar di Pontianak, kota di garis khatulistiwa, dan sejak SMA terbiasa bergerak di antara teknologi, sains, dan ekonomi.</p>
+          <p>
+            Saat sekolah saya ikut tim competitive programming dan robotika, sekaligus menjadi sekretaris
+            Olimpiade Ekonomi dan sekretaris Galeri Investasi &amp; Edukasi yang bekerja sama dengan
+            Bursa Efek Indonesia dan program Kementerian Keuangan. Di sana saya mengurus administrasi,
+            dokumentasi, dan workshop literasi keuangan.
+          </p>
+          <p>
+            Banyak proyek saya lahir dari orang-orang di sekitar saya, seperti minimarket ayah saya
+            dan anak-anak berkebutuhan khusus. Kompetisilah yang menjadi tempat saya menguji ide-ide tersebut.
+          </p>
+
+          <div class="kenapa">
+            <h3>Kenapa S-Class?</h3>
+            <p>
+              Saya mendaftar ke Program S-Class BINUS @Alam Sutera untuk mengasah inovasi teknologi, riset,
+              kompetisi, dan pengembangan diri. Saya ingin belajar di lingkungan yang
+              mendorong untuk mengikuti kompetisi dan kolaborasi lintas bidang, lalu membangun solusi yang berdampak bersama
+              teman-teman yang punya semangat yang sama. Yang saya bawa: disiplin dan kemauan
+              untuk terus belajar.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container perjalanan">
+        <h3>Perjalanan saya</h3>
+        <p class="ujung"><span>Pontianak</span> <span>Alam Sutera</span></p>
+        <ol class="garis-waktu">
+          <li>
+            <span class="tahun">2023</span>
+            <p>Masuk SMA Katolik Santu Petrus Pontianak, peminatan IEKM dan IT. Ikut NASFIA dengan riset PETVIA.</p>
+          </li>
+          <li>
+            <span class="tahun">2024</span>
+            <p>Menjadi sekretaris Galeri Investasi &amp; Edukasi (Juni 2024–Juni 2025) dan meraih medali perunggu GACCI di BeeFest BINUS.</p>
+          </li>
+          <li>
+            <span class="tahun">2025</span>
+            <p>Meraih medali emas Virtual Innovation Competition, juara 2 Investor Protection Month dan Cerdas Cermat IT, finalis Techtopia.</p>
+          </li>
+          <li>
+            <span class="tahun">2026</span>
+            <p>Ikut scriptCTF dan Kali Team CTF, mulai kuliah di BINUS, bergabung dengan Cyber Security Community, dan mendaftar <span class="nowrap">S-Class</span>.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="keahlian" id="keahlian" aria-labelledby="judul-keahlian">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="judul-keahlian">Keahlian</h2>
+          <p>Bahasa dan alat yang sudah saya pernah pakai di proyek dan kompetisi.</p>
+        </div>
+
+        <dl class="stack">
+          <div>
+            <dt>C# dan Unity</dt>
+            <dd>Membangun Sankalpa, termasuk navigasi UI dan level dengan tingkat kesulitan bertahap.</dd>
+          </div>
+          <div>
+            <dt>HTML, CSS, JavaScript</dt>
+            <dd>Archipelore, panel TokoKu Manager, dan portfolio ini, yang dibuat hanya dengan HTML dan CSS.</dd>
+          </div>
+          <div>
+            <dt>Google Apps Script</dt>
+            <dd>TokoKu Manager: menu, panel samping, dan otomatisasi Google Sheets untuk minimarket keluarga.</dd>
+          </div>
+          <div>
+            <dt>Python</dt>
+            <dd>Password Security Checker berbasis command-line.</dd>
+          </div>
+          <div>
+            <dt>C dan C++</dt>
+            <dd>Dasar pemrograman dan latihan competitive programming di tim sekolah.</dd>
+          </div>
+          <div>
+            <dt>Git, GitHub, Kali Linux</dt>
+            <dd>Mengelola kode proyek dan berlatih keamanan siber untuk kompetisi CTF.</dd>
+          </div>
+        </dl>
+
+        <div class="sertifikasi">
+          <h3>Sertifikasi</h3>
+          <ul>
+            <li>Introduction to C Programming<span>Dicoding Indonesia</span></li>
+            <li>Google Analytics Certification<span>Google Digital Academy</span></li>
+            <li>Basic Robotics with Arduino Uno</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="kontak" id="kontak" aria-labelledby="judul-kontak">
+      <div class="container kontak-box">
+        <h2 id="judul-kontak">Mari terhubung</h2>
+        <p>Saya terbuka untuk diskusi proyek atau ajakan lomba.</p>
+        <ul class="kontak-list">
+          <li>
+            <span class="kontak-label">Email</span>
+            <a href="mailto:karin.angelica88@gmail.com">karin.angelica88@gmail.com</a>
+          </li>
+          <li>
+            <span class="kontak-label">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/karin-angelica-9696752a2" target="_blank" rel="noopener">linkedin.com/in/karin-angelica-9696752a2</a>
+          </li>
+          <li>
+            <span class="kontak-label">GitHub</span>
+            <a href="https://github.com/karinangelica" target="_blank" rel="noopener">github.com/karinangelica</a>
+          </li>
+          <li>
+            <span class="kontak-label">CV</span>
+            <a href="files/CV_Karin_Angelica.pdf" download>Unduh CV dalam format PDF</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="bukti" id="bukti-vic" popover aria-labelledby="judul-bukti-vic">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-bukti-vic">Virtual Innovation Competition 2025, medali emas</p>
+        <button class="tutup" type="button" popovertarget="bukti-vic" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img src="images/sertifikat/vic-2025.jpg" alt="Sertifikat medali emas Young Scientist untuk proyek Tengkawang Kiss di Virtual Innovation Competition 2025" width="596" height="846" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="bukti-scriptctf" popover aria-labelledby="judul-bukti-scriptctf">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-bukti-scriptctf">scriptCTF 2026, peringkat 153 dari 1.249</p>
+        <button class="tutup" type="button" popovertarget="bukti-scriptctf" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img src="images/sertifikat/scriptctf-2026.jpg" alt="Sertifikat partisipasi scriptCTF 2026 untuk sana dari tim pls2digit, peringkat 153 dari 1249" width="1179" height="635" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="bukti-kali" popover aria-labelledby="judul-bukti-kali">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-bukti-kali">Kali Team CTF 2026</p>
+        <button class="tutup" type="button" popovertarget="bukti-kali" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img src="images/sertifikat/kali-ctf-2026.jpg" alt="Sertifikat partisipasi Kali Team CTF 26 untuk sana dari tim pls2digit" width="1148" height="765" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="bukti-fiksi" popover aria-labelledby="judul-bukti-fiksi">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-bukti-fiksi">FIKSI, Sankalpa oleh Tim Nova</p>
+        <button class="tutup" type="button" popovertarget="bukti-fiksi" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img src="images/sertifikat/fiksi-sankalpa.jpg" alt="Daftar peserta FIKSI yang menandai Tim Nova dengan produk Sankalpa: Game Edukatif untuk Anak Disabilitas Intelektual" width="720" height="381" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="bukti-gacci" popover aria-labelledby="judul-bukti-gacci">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-bukti-gacci">GACCI 2024, medali perunggu</p>
+        <button class="tutup" type="button" popovertarget="bukti-gacci" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img src="images/sertifikat/gacci-2024.jpg" alt="Sertifikat medali perunggu Game Analysis Creative Challenge of Ideas dari School of Computer Science BINUS University, 3 November 2024" width="1300" height="905" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="bukti-ipm" popover aria-labelledby="judul-bukti-ipm">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-bukti-ipm">Investor Protection Month 2025, juara 2</p>
+        <button class="tutup" type="button" popovertarget="bukti-ipm" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img src="images/sertifikat/ipm-2025.jpg" alt="Piagam penghargaan Investor Protection Month 2025 untuk Karin Angelica sebagai juara 2 dan penerima dana CSR" width="1121" height="630" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="bukti-techtopia" popover aria-labelledby="judul-bukti-techtopia">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-bukti-techtopia">Techtopia Vol.1 2025, finalis web design</p>
+        <button class="tutup" type="button" popovertarget="bukti-techtopia" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img src="images/sertifikat/techtopia-2025.jpg" alt="Piagam penghargaan Lomba Web Design Techtopia Vol.1 untuk Karin Angelica" width="1280" height="719" loading="lazy" />
+        <img src="images/sertifikat/techtopia-finalis.jpg" alt="Pengumuman finalis Lomba Web Design Techtopia, Tim Kreasi Generasi Emas dari SMA Katolik Santu Petrus Pontianak dengan skor 78,83" width="738" height="1600" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="bukti-nasfia" popover aria-labelledby="judul-bukti-nasfia">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-bukti-nasfia">NASFIA 2023, riset PETVIA</p>
+        <button class="tutup" type="button" popovertarget="bukti-nasfia" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img src="images/sertifikat/nasfia-2023.jpg" alt="Halaman judul makalah PETVIA: teh daun pepaya, bunga telang, dan daun stevia, oleh Karin Angelica dan Nico Anthony" width="1090" height="570" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="bukti-ksr" popover aria-labelledby="judul-bukti-ksr">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-bukti-ksr">Kompetisi Sains Ruangguru 2024 dan 2025</p>
+        <button class="tutup" type="button" popovertarget="bukti-ksr" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img src="images/sertifikat/ksr-2024.jpg" alt="Sertifikat apresiasi Kompetisi Sains Ruangguru 2024 bidang ekonomi" width="1280" height="795" loading="lazy" />
+        <img src="images/sertifikat/ksr-2025.jpg" alt="Sertifikat apresiasi Kompetisi Sains Ruangguru 2025 bidang matematika" width="1132" height="1600" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="bukti-stma" popover aria-labelledby="judul-bukti-stma">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-bukti-stma">Olimpiade Asuransi dan Aktuaria 2025</p>
+        <button class="tutup" type="button" popovertarget="bukti-stma" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img src="images/sertifikat/stma-2025.jpg" alt="Sertifikat peserta kategori asuransi Olimpiade Asuransi dan Aktuaria Tingkat Nasional 2025 dari STMA Trisakti" width="999" height="622" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="bukti-screen14" popover aria-labelledby="judul-bukti-screen14">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-bukti-screen14">Cerdas Cermat IT Screen14 2025, juara 2</p>
+        <button class="tutup" type="button" popovertarget="bukti-screen14" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img src="images/sertifikat/screen14-2025.jpg" alt="Sertifikat juara 2 Cerdas Cermat IT dengan tema Unlocking the Future with AI and Cybersecurity, 3 Mei 2025" width="1300" height="925" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="bukti-teac" popover aria-labelledby="judul-bukti-teac">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-bukti-teac">Trisakti Economic and Accounting Competition, juara harapan 2</p>
+        <button class="tutup" type="button" popovertarget="bukti-teac" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img src="images/sertifikat/teac-foto.jpg" alt="Karin Angelica bersama tim memegang piagam dan hadiah di Trisakti Economic and Accounting Competition" width="1200" height="674" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="bukti" id="zoom-rk-1" popover aria-labelledby="judul-zoom-rk-1">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-rk-1">Ringkasan Eksekutif Sankalpa, halaman 1 dari 8</p>
+        <button class="tutup" type="button" popovertarget="zoom-rk-1" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="images/karya-tulis/ringkasan-01.jpg" alt="Halaman 1: Sampul ringkasan eksekutif Sankalpa, Tim Nova" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-rk-2" popover aria-labelledby="judul-zoom-rk-2">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-rk-2">Ringkasan Eksekutif Sankalpa, halaman 2 dari 8</p>
+        <button class="tutup" type="button" popovertarget="zoom-rk-2" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="images/karya-tulis/ringkasan-02.jpg" alt="Halaman 2: Latar belakang masalah, peluang usaha, dan value propositions" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-rk-3" popover aria-labelledby="judul-zoom-rk-3">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-rk-3">Ringkasan Eksekutif Sankalpa, halaman 3 dari 8</p>
+        <button class="tutup" type="button" popovertarget="zoom-rk-3" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="images/karya-tulis/ringkasan-03.jpg" alt="Halaman 3: Value propositions canvas, segmentasi pasar, dan key activities" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-rk-4" popover aria-labelledby="judul-zoom-rk-4">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-rk-4">Ringkasan Eksekutif Sankalpa, halaman 4 dari 8</p>
+        <button class="tutup" type="button" popovertarget="zoom-rk-4" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="images/karya-tulis/ringkasan-04.jpg" alt="Halaman 4: Prototipe awal: tampilan pertama, tab, level 1 dan level 2" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-rk-5" popover aria-labelledby="judul-zoom-rk-5">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-rk-5">Ringkasan Eksekutif Sankalpa, halaman 5 dari 8</p>
+        <button class="tutup" type="button" popovertarget="zoom-rk-5" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="images/karya-tulis/ringkasan-05.jpg" alt="Halaman 5: Prototipe awal: level 3 sampai level 5 dan eksplorasi minat" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-rk-6" popover aria-labelledby="judul-zoom-rk-6">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-rk-6">Ringkasan Eksekutif Sankalpa, halaman 6 dari 8</p>
+        <button class="tutup" type="button" popovertarget="zoom-rk-6" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="images/karya-tulis/ringkasan-06.jpg" alt="Halaman 6: Fitur simulasi: gosok gigi, kancing baju, puzzle, dan sendok" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-rk-7" popover aria-labelledby="judul-zoom-rk-7">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-rk-7">Ringkasan Eksekutif Sankalpa, halaman 7 dari 8</p>
+        <button class="tutup" type="button" popovertarget="zoom-rk-7" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="images/karya-tulis/ringkasan-07.jpg" alt="Halaman 7: Fitur simulasi lanjutan dan fitur eksplorasi minat" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+    <div class="bukti" id="zoom-rk-8" popover aria-labelledby="judul-zoom-rk-8">
+      <div class="bukti-head">
+        <p class="bukti-judul" id="judul-zoom-rk-8">Ringkasan Eksekutif Sankalpa, halaman 8 dari 8</p>
+        <button class="tutup" type="button" popovertarget="zoom-rk-8" popovertargetaction="hide">Tutup</button>
+      </div>
+      <div class="bukti-galeri">
+        <img class="halaman-besar" src="images/karya-tulis/ringkasan-08.jpg" alt="Halaman 8: Halaman video prototipe Sankalpa" width="900" height="1271" loading="lazy" />
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-box">
+      <p>© 2026 Karin Angelica. Halaman portfolio ini dibuat hanya dengan HTML dan CSS.</p>
+      <p class="flag" tabindex="0" title="Arahkan kursor untuk membaca">flag{te3r1m4_k4s1h_ud4h_m4mp1r}</p>
+      <a href="#top">Kembali ke atas</a>
+    </div>
+  </footer>
+</body>
+
+</html>

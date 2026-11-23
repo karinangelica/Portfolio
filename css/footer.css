@@ -1,0 +1,52 @@
+.footer {
+  padding: 28px 0 44px;
+  background: var(--tinta);
+  color: #aab3c8;
+  font-size: 0.875rem;
+}
+
+.footer-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 32px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer a {
+  color: var(--putih);
+  font-weight: 600;
+  text-underline-offset: 4px;
+}
+
+.footer :focus-visible {
+  outline-color: var(--putih);
+}
+
+.flag {
+  font-family: var(--font-kode);
+  font-size: 0.8125rem;
+  filter: blur(4px);
+  cursor: help;
+  transition: filter 0.4s ease;
+}
+
+.flag:hover,
+.flag:focus-visible {
+  filter: none;
+}
+
+@media (max-width: 768px) {
+  .footer-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding-bottom: 36px;
+  }
+}
