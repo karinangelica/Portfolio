@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset="UTF-8">
+	<title>Archipelore</title>
+	<link rel="icon" type="image/x-icon" href="https://www.primadonanet.co.id/wp-content/uploads/2019/07/cropped-Icon-Favicon.png">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #FFFFFF;
+			color: #000080; 
+		}
+		.header {
+			background-color: #000080; 
+			color: white;
+			padding: 10px;
+			text-align: center;
+		}
+		.navbar {
+			display: flex;
+			justify-content: center;
+			background-color: #000080;
+			padding: 10px;
+		}
+		.navbar a {
+			color: white;
+			padding: 10px 20px;
+			text-decoration: none;
+			font-size: 18px;
+			margin: 0 10px;
+		}
+		.navbar a:hover {
+			background-color: #4CAF50;
+		}
+		.submenu {
+			display: flex;
+			justify-content: space-around;
+			padding: 10px;
+			background-color: #f4f4f4;
+		}
+		.submenu a {
+			color: #000080;
+			font-size: 16px;
+			text-decoration: none;
+			padding: 8px 12px;
+		}
+		.submenu a:hover {
+			background-color: #dcdcdc;
+		}
+		.footer {
+			text-align: center;
+			padding: 10px;
+			background-color: #000080;
+			color: white;
+		}
+		.socmed {
+			display: flex;
+			justify-content: center;
+			padding: 10px;
+		}
+		.socmed a {
+			color: white;
+			font-size: 24px;
+			margin: 0 15px;
+			text-decoration: none;
+		}
+		.socmed a:hover {
+			color: #4CAF50;
+		}
+		.marquee {
+			background-color: #000080;
+			color: white;
+			padding: 5px;
+			font-size: 16px;
+		}
+		.logo {
+			max-height: 50px;
+		}
+	</style>
+</head>
+
+<frameset noresize scrolling="yes" rows="22%, 70%, 8%">
+	<frameset frameborder="1" noresize cols="15%, 85%">
+		<frame src="logo.html"></frame>
+		<frame src="judul.html"></frame>
+	</frameset>
+
+	<frameset noresize cols="15%, 85%">
+		<frame src="list.html"></frame>
+		<frame name="content" src="home.html"></frame>
+	</frameset>
+	<frame src="bawah.html"></frame>
+</frameset>
+</html>

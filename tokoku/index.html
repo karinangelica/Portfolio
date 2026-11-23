@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cempaka Baru, demo TokoKu Manager</title>
+  <link rel="stylesheet" href="shell.css" />
+</head>
+
+<body>
+  <div class="app panel-buka" id="app">
+    <header class="atas">
+      <span class="ikon-sheets" aria-hidden="true"></span>
+      <div>
+        <p class="judul-doc">Cempaka Baru</p>
+        <p class="ket-doc">Demo Google Sheets + Apps Script. Data contoh, kembali seperti semula saat halaman dimuat ulang.</p>
+      </div>
+    </header>
+
+    <nav class="menubar" aria-label="Menu spreadsheet">
+      <div class="menu-wrap">
+        <button type="button" class="menu-tombol" id="menu-tombol" aria-haspopup="true" aria-expanded="false">Menu</button>
+        <ul class="menu-isi" id="menu-isi" hidden></ul>
+      </div>
+      <button type="button" class="menu-tombol tombol-panel" id="tombol-panel">Buka panel</button>
+      <p class="menu-petunjuk">Ubah data lewat panel di kanan, lalu lihat sheet ikut berubah.</p>
+    </nav>
+
+    <div class="rumus" aria-live="polite">
+      <span class="kotak-nama" id="kotak-nama">A1</span>
+      <span class="isi-rumus" id="isi-rumus"></span>
+    </div>
+
+    <div class="kerja">
+      <main class="grid-wrap" id="grid-wrap" aria-label="Isi sheet">
+        <table class="grid" id="grid"></table>
+      </main>
+
+      <aside class="sidebar" id="sidebar" aria-label="Panel TokoKu Manager">
+        <div class="sidebar-head">
+          <p id="sidebar-judul">Panel</p>
+          <button type="button" id="sidebar-tutup" aria-label="Tutup panel">✕</button>
+        </div>
+        <iframe id="sidebar-frame" title="Panel TokoKu Manager"></iframe>
+      </aside>
+    </div>
+
+    <nav class="tab-sheet" id="tab-sheet" aria-label="Daftar sheet"></nav>
+  </div>
+
+  <div class="dialog-latar" id="dialog" hidden>
+    <div class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="dialog-judul" aria-describedby="dialog-pesan">
+      <h2 id="dialog-judul"></h2>
+      <p id="dialog-pesan"></p>
+      <button type="button" id="dialog-ok">OK</button>
+    </div>
+  </div>
+
+  <!-- 1. tiruan layanan Apps Script, 2. Code.gs asli, 3. tampilan spreadsheet -->
+  <script src="mock-apps-script.js"></script>
+  <script src="code-gs.js"></script>
+  <script src="shell.js"></script>
+</body>
+
+</html>

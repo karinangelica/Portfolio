@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Demo portfolio: satu baris ini menggantikan google.script.run milik Google -->
+<script src="bridge.js"></script>
+<title>TokoKu Manager</title>
+<style>
+
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#00B14F;--green-d:#009944;--green-l:#E9F9EF;
+  --red:#EF4444;--red-l:#FEE2E2;
+  --amber:#F59E0B;--amber-l:#FEF3C7;
+  --blue:#2563EB;--blue-l:#EFF6FF;
+  --wa:#128C7E;
+  --gray-50:#F8F9FA;--gray-100:#F1F3F5;--gray-200:#E9ECEF;
+  --gray-400:#adb5bd;--gray-500:#6c757d;
+  --gray-700:#495057;--gray-900:#1a1a1a;
+  --radius:10px;
+  --font:'Segoe UI',system-ui,sans-serif;
+}
+body{font-family:var(--font);background:var(--gray-50);color:var(--gray-900);font-size:13px;min-height:100vh}
+
+.hdr{background:#1a1a1a;padding:14px 14px 10px;position:sticky;top:0;z-index:50}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.logo{font-size:16px;font-weight:800;color:#fff;letter-spacing:-.5px}
+.logo span{color:var(--green)}
+.save-dot{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#aaa}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0}
+.dot.saving{background:var(--amber);animation:blink .7s infinite}
+.dot.err{background:var(--red)}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;background:#111;border-radius:8px;padding:8px 6px}
+.sc{text-align:center}
+.sc-n{font-size:17px;font-weight:800;color:#fff;line-height:1;font-variant-numeric:tabular-nums}
+.sc-n.warn{color:#f87171}
+.sc-l{font-size:9px;color:#777;margin-top:2px;font-weight:600;text-transform:uppercase;letter-spacing:.3px}
+
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-bottom:1.5px solid var(--gray-200);position:sticky;top:88px;z-index:40}
+.tab{border:none;background:none;font-family:var(--font);font-size:11px;font-weight:700;color:var(--gray-500);cursor:pointer;padding:9px 4px 8px;border-bottom:2.5px solid transparent;margin-bottom:-1.5px;transition:all .12s;display:flex;flex-direction:column;align-items:center;gap:2px;white-space:nowrap}
+.tab svg{width:16px;height:16px;flex-shrink:0}
+.tab.on{color:var(--green);border-bottom-color:var(--green)}
+.tab:hover{color:var(--gray-900)}
+
+.main{padding:12px}
+.page{display:none}.page.on{display:block}
+
+.card{background:#fff;border-radius:var(--radius);border:1.5px solid var(--gray-200);padding:14px;margin-bottom:10px}
+.card-title{font-size:12px;font-weight:800;color:var(--gray-900);margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px;display:flex;align-items:center;gap:6px}
+.card-title svg{color:var(--green);flex-shrink:0}
+
+.srch-wrap{position:relative;margin-bottom:10px}
+.srch{width:100%;padding:9px 12px 9px 32px;border:1.5px solid var(--gray-200);border-radius:var(--radius);font-family:var(--font);font-size:12px;background:#fff;color:var(--gray-900);outline:none;transition:border-color .15s}
+.srch:focus{border-color:var(--green)}
+.srch-ico{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--gray-400);pointer-events:none}
+.srch-ico svg{width:14px;height:14px}
+
+.chips{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px}
+.chip{padding:4px 10px;border-radius:99px;font-size:11px;font-weight:700;cursor:pointer;border:1.5px solid var(--gray-200);background:#fff;color:var(--gray-500);transition:all .12s;white-space:nowrap}
+.chip.on{background:var(--gray-900);color:#fff;border-color:var(--gray-900)}
+
+.plist{display:flex;flex-direction:column;gap:6px}
+.pcard{background:#fff;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:11px;transition:border-color .12s;position:relative;overflow:hidden}
+.pcard::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px}
+.pcard.ok::before{background:var(--green)}
+.pcard.low::before{background:var(--amber)}
+.pcard.out::before{background:var(--red)}
+.pcard.low{border-color:#fcd34d;background:#fffbeb}
+.pcard.out{border-color:#fca5a5;background:#fff5f5;opacity:.85}
+.pcard-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:6px}
+.pname{font-size:13px;font-weight:800;color:var(--gray-900);line-height:1.3;flex:1}
+.stk-badge{font-size:10px;font-weight:700;padding:3px 8px;border-radius:7px;white-space:nowrap;flex-shrink:0}
+.stk-ok{background:#D1FAE5;color:#065f46}
+.stk-low{background:#FEF3C7;color:#92400e}
+.stk-out{background:var(--red-l);color:#991b1b}
+.pmeta{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:7px}
+.badge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:99px}
+.b-pokok{background:#FFF9C4;color:#7c5a00}
+.b-minuman{background:#DBEAFE;color:#1e3a8a}
+.b-snack{background:#FCE7F3;color:#831843}
+.b-mie{background:#FFE4E6;color:#881337}
+.b-toiletries{background:#EDE9FE;color:#3730a3}
+.b-lainnya{background:var(--gray-100);color:#374151}
+.pbar{font-size:10px;color:var(--gray-400);font-family:monospace}
+.pharga{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;margin-bottom:8px}
+.ph-item{background:var(--gray-50);border-radius:7px;padding:6px 8px;text-align:center}
+.ph-lbl{font-size:9px;color:var(--gray-400);font-weight:700;text-transform:uppercase;letter-spacing:.3px;margin-bottom:1px}
+.ph-val{font-size:12px;font-weight:800;font-variant-numeric:tabular-nums}
+.ph-normal .ph-val{color:var(--gray-700)}
+.ph-grab .ph-val{color:#00843B}
+.ph-wa .ph-val{color:var(--wa)}
+.pacts{display:flex;gap:5px}
+
+.btn{padding:7px 11px;border-radius:8px;font-family:var(--font);font-size:12px;font-weight:700;cursor:pointer;border:1.5px solid var(--gray-200);background:#fff;color:var(--gray-700);transition:all .12s;display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
+.btn:hover{border-color:var(--gray-400)}
+.btn:active{transform:scale(.97)}
+.btn-green{background:var(--green);border-color:var(--green);color:#fff}
+.btn-green:hover{background:var(--green-d);border-color:var(--green-d)}
+.btn-red{background:var(--red-l);border-color:#FECACA;color:#991b1b}
+.btn-wa{background:#25D366;border-color:#25D366;color:#fff}
+.btn-sm{padding:5px 9px;font-size:11px;border-radius:7px}
+.btn-full{width:100%;justify-content:center}
+.btn svg{width:13px;height:13px;flex-shrink:0}
+
+.ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;align-items:flex-end;justify-content:center;backdrop-filter:blur(2px)}
+.ov.on{display:flex}
+.drawer{background:#fff;border-radius:16px 16px 0 0;padding:20px;width:100%;max-height:88vh;overflow-y:auto}
+.drawer-handle{width:36px;height:4px;background:var(--gray-200);border-radius:99px;margin:0 auto 16px}
+.drawer-title{font-size:15px;font-weight:800;margin-bottom:16px;color:var(--gray-900)}
+
+.fg{margin-bottom:11px}
+.fl{display:block;font-size:10px;font-weight:800;color:var(--gray-500);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
+.fi{width:100%;padding:9px 11px;border:1.5px solid var(--gray-200);border-radius:var(--radius);font-family:var(--font);font-size:13px;background:#fff;color:var(--gray-900);outline:none;transition:border-color .12s}
+.fi:focus{border-color:var(--green)}
+select.fi{cursor:pointer}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.preview-harga{background:#F0FDF4;border:1.5px solid #BBF7D0;border-radius:8px;padding:10px;margin:8px 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;text-align:center}
+.pv-lbl{font-size:9px;color:var(--gray-500);font-weight:700;text-transform:uppercase}
+.pv-val{font-size:13px;font-weight:800}
+.pv-g{color:#00843B}.pv-g2{color:#C05621}.pv-w{color:var(--wa)}
+.frow-acts{display:flex;gap:6px;justify-content:flex-end;margin-top:4px}
+
+.sk-card{background:#fff;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:11px;margin-bottom:6px;display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}
+.sk-card.low{border-left:3px solid var(--amber);background:#fffbeb}
+.sk-card.out{border-left:3px solid var(--red);background:#fff5f5}
+.sk-info{}
+.sk-name{font-size:13px;font-weight:700;margin-bottom:2px}
+.sk-sub{font-size:11px;color:var(--gray-500)}
+.sk-inputs{display:flex;flex-direction:column;gap:4px;align-items:flex-end}
+.sk-input{width:72px;padding:6px 8px;border:1.5px solid var(--gray-200);border-radius:8px;font-size:13px;font-weight:700;text-align:center;font-family:monospace;outline:none}
+.sk-input:focus{border-color:var(--green)}
+.sk-input.masuk{border-color:#BBF7D0;background:#F0FDF4}
+.sk-lbl{font-size:9px;color:var(--gray-400);font-weight:600;text-align:center;text-transform:uppercase}
+.sk-toolbar{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
+
+.sc-card{background:#fff;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px;margin-bottom:8px}
+.sc-name{font-size:14px;font-weight:800;margin-bottom:2px}
+.sc-cmp{font-size:11px;color:var(--gray-500);margin-bottom:8px}
+.sc-row{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--gray-700);margin-bottom:4px}
+.sc-row svg{width:13px;height:13px;color:var(--gray-400);flex-shrink:0}
+.sc-acts{display:flex;gap:6px;margin-top:10px}
+
+.wa-item{background:#fff;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px;margin-bottom:7px}
+.wa-kw{display:inline-block;background:var(--gray-900);color:#fff;font-size:10px;font-weight:700;padding:3px 9px;border-radius:6px;margin-bottom:6px;font-family:monospace}
+.wa-title{font-size:12px;font-weight:700;margin-bottom:4px}
+.wa-msg{font-size:11px;color:var(--gray-500);white-space:pre-line;line-height:1.55;margin-bottom:8px}
+
+.empty{text-align:center;padding:30px 16px;color:var(--gray-400)}
+.empty svg{width:36px;height:36px;margin:0 auto 8px;display:block}
+
+.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%) translateY(60px);background:var(--gray-900);color:#fff;padding:10px 16px;border-radius:10px;font-size:12px;font-weight:700;z-index:999;opacity:0;transition:all .22s;display:flex;align-items:center;gap:7px;white-space:nowrap;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.toast.on{transform:translateX(-50%) translateY(0);opacity:1}
+
+.loading{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;gap:10px;color:var(--gray-400)}
+.spin{width:28px;height:28px;border:3px solid var(--gray-200);border-top-color:var(--green);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-top">
+    <div class="logo">Toko<span>Ku</span> <span style="font-size:10px;font-weight:500;color:#555">Manager</span></div>
+    <div class="save-dot"><span class="dot" id="dot"></span><span id="stxt">Memuat...</span></div>
+  </div>
+  <div class="stats" id="stats">
+    <div class="sc"><div class="sc-n" id="s-total">-</div><div class="sc-l">Produk</div></div>
+    <div class="sc"><div class="sc-n warn" id="s-low">-</div><div class="sc-l">Tipis/Kosong</div></div>
+    <div class="sc"><div class="sc-n" id="s-stok">-</div><div class="sc-l">Total Stok</div></div>
+    <div class="sc"><div class="sc-n" id="s-sales">-</div><div class="sc-l">Sales</div></div>
+  </div>
+</div>
+
+<div class="tabs">
+  <button class="tab on" onclick="goTab('produk',this)">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+    Produk
+  </button>
+  <button class="tab" onclick="goTab('stok',this)">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    Stok
+  </button>
+  <button class="tab" onclick="goTab('sales',this)">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 11.39 19a19.73 19.73 0 0 1-5.75-5.75A19.86 19.86 0 0 1 3 4.18 2 2 0 0 1 4.96 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.09 9.91a16 16 0 0 0 5.75 5.75l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Sales
+  </button>
+  <button class="tab" onclick="goTab('wa',this)">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    WA Bot
+  </button>
+</div>
+
+
+
+
+<div class="main">
+
+<div class="page on" id="page-produk">
+  <div style="display:flex;gap:6px;margin-bottom:10px">
+    <button class="btn btn-green" style="flex:1;justify-content:center" onclick="bukaFormProduk()">
+      <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      Tambah Produk
+    </button>
+    <button class="btn" onclick="cekStokAlert()" title="Refresh stok alert">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14" height="14"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      Refresh
+    </button>
+  </div>
+
+  <div class="srch-wrap">
+    <span class="srch-ico"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+    <input class="srch" type="text" id="q" placeholder="Cari nama, barcode, kategori..." oninput="renderProduk()">
+  </div>
+
+  <div class="chips" id="chips">
+    <div class="chip on" onclick="fCat(this,'')">Semua</div>
+    <div class="chip" onclick="fCat(this,'Kebutuhan Pokok')">Pokok</div>
+    <div class="chip" onclick="fCat(this,'Minuman')">Minuman</div>
+    <div class="chip" onclick="fCat(this,'Snack')">Snack</div>
+    <div class="chip" onclick="fCat(this,'Mie & Pasta')">Mie</div>
+    <div class="chip" onclick="fCat(this,'Toiletries')">Toiletries</div>
+    <div class="chip" onclick="fCat(this,'Lainnya')">Lainnya</div>
+  </div>
+
+  <div class="plist" id="plist">
+    <div class="loading"><div class="spin"></div><span>Memuat produk...</span></div>
+  </div>
+</div>
+
+
+<div class="page" id="page-stok">
+  <div class="sk-toolbar">
+    <button class="btn" onclick="skF='all';renderStok()">Semua</button>
+    <button class="btn btn-red" onclick="skF='low';renderStok()">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="13" height="13"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      Tipis/Kosong
+    </button>
+    <button class="btn btn-green" onclick="simpanSemuaStok()" style="margin-left:auto">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="13" height="13"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+      Simpan Stok
+    </button>
+  </div>
+  <div id="sklist">
+    <div class="loading"><div class="spin"></div><span>Memuat stok...</span></div>
+  </div>
+</div>
+
+
+<div class="page" id="page-sales">
+  <button class="btn btn-green btn-full" onclick="bukaFormSales()" style="margin-bottom:10px">
+    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="13" height="13"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+    Tambah Sales / Supplier
+  </button>
+  <div id="klist">
+    <div class="loading"><div class="spin"></div><span>Memuat kontak...</span></div>
+  </div>
+</div>
+
+
+<div class="page" id="page-wa">
+  <div id="walist"></div>
+</div>
+
+</div>
+
+
+<div class="ov" id="mov" onclick="closeDrawer('mov',event)">
+  <div class="drawer">
+    <div class="drawer-handle"></div>
+    <div class="drawer-title" id="form-title">Tambah Produk</div>
+
+    <div class="fg"><label class="fl">Nama Produk *</label><input class="fi" type="text" id="f-nama" placeholder="contoh: Indomie Goreng" oninput="prevH()"></div>
+
+    <div class="fr">
+      <div class="fg"><label class="fl">Kategori</label>
+        <select class="fi" id="f-kat">
+          <option>Kebutuhan Pokok</option><option>Minuman</option><option>Snack</option>
+          <option>Mie &amp; Pasta</option><option>Toiletries</option><option>Lainnya</option>
+        </select>
+      </div>
+      <div class="fg"><label class="fl">Satuan</label>
+        <select class="fi" id="f-sat">
+          <option>Pcs</option><option>Bungkus</option><option>Botol</option><option>Kg</option>
+          <option>Sachet</option><option>Dus</option><option>Liter</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="fg"><label class="fl">Barcode / SKU</label><input class="fi" type="text" id="f-bar" placeholder="8999999011065" inputmode="numeric"></div>
+
+    <div class="fr">
+      <div class="fg"><label class="fl">Harga Normal (Rp) *</label><input class="fi" type="number" id="f-harga" placeholder="3500" inputmode="numeric" oninput="prevH()"></div>
+      <div class="fg"><label class="fl">Margin GrabMart (%)</label><input class="fi" type="number" id="f-margin" value="10" min="0" max="50" inputmode="numeric" oninput="prevH()"></div>
+    </div>
+
+
+    <div class="preview-harga" id="prev-harga">
+      <div><div class="pv-lbl">GrabMart +10%</div><div class="pv-val pv-g" id="pv1">-</div></div>
+      <div><div class="pv-lbl">GrabMart +15%</div><div class="pv-val pv-g2" id="pv2">-</div></div>
+      <div><div class="pv-lbl">WA Business</div><div class="pv-val pv-w" id="pv3">-</div></div>
+    </div>
+
+    <div class="fr">
+      <div class="fg"><label class="fl">Stok Saat Ini</label><input class="fi" type="number" id="f-stok" placeholder="0" min="0" inputmode="numeric"></div>
+      <div class="fg"><label class="fl">Stok Minimum</label><input class="fi" type="number" id="f-stokmin" value="10" min="0" inputmode="numeric"></div>
+    </div>
+
+    <div class="fg">
+      <label class="fl">Platform</label>
+      <select class="fi" id="f-platform">
+        <option value="GrabMart, GoMart, WA Business">Semua (GrabMart + GoMart + WA)</option>
+        <option value="GrabMart, GoMart">GrabMart + GoMart saja</option>
+        <option value="GrabMart, WA Business">GrabMart + WA saja</option>
+        <option value="GrabMart">GrabMart saja</option>
+        <option value="WA Business">WA Business saja</option>
+      </select>
+    </div>
+
+    <div class="frow-acts">
+      <button class="btn" onclick="closeDrawer('mov')">Batal</button>
+      <button class="btn btn-green" onclick="simpanProduk()" id="btn-simpan-produk">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="13" height="13"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/></svg>
+        Simpan
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<div class="ov" id="msales" onclick="closeDrawer('msales',event)">
+  <div class="drawer">
+    <div class="drawer-handle"></div>
+    <div class="drawer-title">Tambah Sales / Supplier</div>
+    <div class="fr">
+      <div class="fg"><label class="fl">Nama Sales *</label><input class="fi" type="text" id="s-nama" placeholder="Pak Budi"></div>
+      <div class="fg"><label class="fl">No. WhatsApp *</label><input class="fi" type="tel" id="s-wa" placeholder="08123456789" inputmode="tel"></div>
+    </div>
+    <div class="fr">
+      <div class="fg"><label class="fl">Perusahaan</label><input class="fi" type="text" id="s-cmp" placeholder="PT Indofood"></div>
+      <div class="fg"><label class="fl">Kategori Produk</label><input class="fi" type="text" id="s-kat" placeholder="Mie, Snack"></div>
+    </div>
+    <div class="fr">
+      <div class="fg"><label class="fl">Hari Kunjungan</label><input class="fi" type="text" id="s-hari" placeholder="Senin & Kamis"></div>
+      <div class="fg"><label class="fl">Min. Order (Rp)</label><input class="fi" type="number" id="s-min" placeholder="500000" inputmode="numeric"></div>
+    </div>
+    <div class="fr">
+      <div class="fg"><label class="fl">Termin Bayar</label><input class="fi" type="text" id="s-trm" placeholder="14 hari / COD"></div>
+      <div class="fg"><label class="fl">Catatan</label><input class="fi" type="text" id="s-cat" placeholder="Kirim H+1"></div>
+    </div>
+    <div class="frow-acts">
+      <button class="btn" onclick="closeDrawer('msales')">Batal</button>
+      <button class="btn btn-green" onclick="simpanSales()">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="13" height="13"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/></svg>
+        Simpan
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+let prods = [], salesData = [], catF = '', skF = 'all', editId = null;
+
+const CBADGE = {
+  'Kebutuhan Pokok':'b-pokok','Minuman':'b-minuman','Snack':'b-snack',
+  'Mie & Pasta':'b-mie','Toiletries':'b-toiletries','Lainnya':'b-lainnya'
+};
+
+const WATPLS = [
+  {k:'HALO',t:'Greeting otomatis',m:'Halo kak! Selamat datang di Toko [NAMA TOKO]\n\nKetik:\n1 STOK - cek stok\n2 HARGA - lihat daftar harga\n3 ORDER - cara pesan\n\nAda yang bisa dibantu? 😊'},
+  {k:'STOK',t:'Cek stok produk',m:'CEK STOK\n\nKetik nama produk:\nContoh: STOK INDOMIE\n\nStok update tiap hari jam 08.00 WIB'},
+  {k:'ORDER',t:'Cara pesan',m:'CARA ORDER\n\n1. Kirim daftar pesanan\n2. Kami konfirmasi stok & harga\n3. Transfer:\n   BCA: 1234567890 (a/n NAMA)\n4. Kirim bukti transfer\n5. Barang dikirim 2 jam!\n\nMin. order: Rp 50.000'},
+  {k:'HABIS',t:'Notif stok kosong',m:'Maaf kak, [PRODUK] sedang kosong.\n\nMau diinfokan saat ada?\nBalas: NOTIFY [PRODUK]\n\nEstimasi restock: [TANGGAL]\n\nProduk serupa:\n- [ALTERNATIF]'},
+  {k:'HARGA',t:'Daftar harga',m:'HARGA TOKO [NAMA]\n\n[DAFTAR PRODUK + HARGA]\n\nHarga sewaktu-waktu dapat berubah.\nMin. order Rp 50.000'},
+];
+
+const rp = n => (n||n===0) ? 'Rp '+Math.round(n).toLocaleString('id-ID') : '-';
+const grab = (h,m) => Math.round(h/0.92*(1+m)/100)*100;
+const wap  = (h,m) => Math.round(h*(1+m)/100)*100;
+const sst  = p => {
+  const s = parseInt(p.stok)||0, m = parseInt(p.stokMin)||10;
+  return s <= 0 ? 'out' : s < m ? 'low' : 'ok';
+};
+
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.innerHTML = msg; t.classList.add('on');
+  setTimeout(() => t.classList.remove('on'), 2800);
+}
+function setDot(s) {
+  document.getElementById('dot').className = 'dot' + (s==='saving'?' saving':s==='err'?' err':'');
+  document.getElementById('stxt').textContent = s==='saving'?'Menyimpan...':s==='err'?'Gagal simpan':'Tersimpan';
+}
+function goTab(id, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+  document.getElementById('page-'+id).classList.add('on');
+  el.classList.add('on');
+  if (id==='stok')  renderStok();
+  if (id==='sales') renderSales();
+  if (id==='wa')    renderWA();
+}
+function fCat(el, c) {
+  catF = c;
+  document.querySelectorAll('.chip').forEach(x => x.classList.remove('on'));
+  el.classList.add('on');
+  renderProduk();
+}
+function closeDrawer(id, e) {
+  if (!e || e.target.classList.contains('ov')) {
+    document.getElementById(id).classList.remove('on');
+  }
+}
+function cekStokAlert() {
+  setDot('saving');
+  google.script.run.withSuccessHandler(() => {
+    setDot('ok');
+    toast('✅ Sheet Stok Alert diperbarui!');
+    loadAll();
+  }).withFailureHandler(err => {
+    setDot('err');
+    toast('❌ Gagal refresh');
+  }).cekStokAlert();
+}
+
+function loadAll() {
+  setDot('saving');
+  google.script.run
+    .withSuccessHandler(function(stats) {
+      document.getElementById('s-total').textContent = stats.totalProduk;
+      document.getElementById('s-low').textContent   = stats.stokTipis;
+      document.getElementById('s-stok').textContent  = stats.totalStok > 999 ? (stats.totalStok/1000).toFixed(1)+'k' : stats.totalStok;
+      document.getElementById('s-sales').textContent = stats.totalSales;
+    })
+    .withFailureHandler(() => {})
+    .getStats();
+
+  google.script.run
+    .withSuccessHandler(function(data) {
+      if (data && data.length === 1 && data[0]._error) {
+        setDot('err');
+        document.getElementById('plist').innerHTML =
+          '<div class="empty" style="color:#ef4444">❌ Error: ' + data[0]._error + '<br><small>Cek Apps Script Executions untuk detail.</small></div>';
+        return;
+      }
+      prods = data || [];
+      renderProduk();
+      setDot('ok');
+    })
+    .withFailureHandler(function(err) {
+      setDot('err');
+      document.getElementById('plist').innerHTML =
+        '<div class="empty" style="color:#ef4444">❌ Gagal memuat: ' + (err.message||'unknown error') + '</div>';
+      toast('❌ Gagal memuat data.');
+    })
+    .getProduk();
+
+  google.script.run
+    .withSuccessHandler(function(data) { salesData = data; })
+    .withFailureHandler(() => {})
+    .getSales();
+}
+
+function renderProduk() {
+  const q = (document.getElementById('q').value||'').toLowerCase();
+  let list = prods.filter(p =>
+    (!q || p.nama.toLowerCase().includes(q) || (p.bar||'').includes(q) || p.kat.toLowerCase().includes(q))
+    && (!catF || p.kat === catF)
+  );
+
+  const el = document.getElementById('plist');
+  if (!list.length) {
+    el.innerHTML = `<div class="empty">
+      <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+      <div>Belum ada produk. Tekan "+ Tambah Produk"</div>
+    </div>`;
+    return;
+  }
+
+  el.innerHTML = list.map(p => {
+    const st = sst(p);
+    const margin = (parseFloat(p.margin)||10)/100;
+    const g10 = p.grab10 || grab(p.harga, 0.10);
+    const g15 = p.grab15 || grab(p.harga, 0.15);
+    const w10 = p.wa10   || wap(p.harga, 0.10);
+    return `<div class="pcard ${st}">
+      <div class="pcard-top">
+        <div class="pname">${p.nama}</div>
+        <span class="stk-badge ${st==='ok'?'stk-ok':st==='low'?'stk-low':'stk-out'}">${st==='ok'?'OK ✓':st==='low'?'⚠ Tipis':'✕ Kosong'} ${p.stok} ${p.sat}</span>
+      </div>
+      <div class="pmeta">
+        <span class="badge ${CBADGE[p.kat]||'b-lainnya'}">${p.kat}</span>
+        ${p.bar ? `<span class="pbar">${p.bar}</span>` : ''}
+      </div>
+      <div class="pharga">
+        <div class="ph-item ph-normal"><div class="ph-lbl">Normal</div><div class="ph-val">${rp(p.harga)}</div></div>
+        <div class="ph-item ph-grab"><div class="ph-lbl">GrabMart</div><div class="ph-val">${rp(g10)}</div></div>
+        <div class="ph-item ph-wa"><div class="ph-lbl">WA Bisnis</div><div class="ph-val">${rp(w10)}</div></div>
+      </div>
+      <div class="pacts">
+        <button class="btn btn-sm" style="flex:1;justify-content:center" onclick="editProduk('${p.id}')">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12" height="12"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          Edit
+        </button>
+        <button class="btn btn-sm btn-red" onclick="hapusProduk('${p.id}')">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12" height="12"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+          Hapus
+        </button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function prevH() {
+  const h = parseFloat(document.getElementById('f-harga').value)||0;
+  const m = (parseFloat(document.getElementById('f-margin').value)||10)/100;
+  document.getElementById('pv1').textContent = h ? rp(grab(h,0.10)) : '-';
+  document.getElementById('pv2').textContent = h ? rp(grab(h,0.15)) : '-';
+  document.getElementById('pv3').textContent = h ? rp(wap(h,m)) : '-';
+}
+
+function bukaFormProduk(p = null) {
+  editId = p ? p.id : null;
+  document.getElementById('form-title').textContent = p ? 'Edit Produk' : 'Tambah Produk';
+  document.getElementById('f-nama').value    = p?.nama    || '';
+  document.getElementById('f-bar').value     = p?.bar     || '';
+  document.getElementById('f-kat').value     = p?.kat     || 'Kebutuhan Pokok';
+  document.getElementById('f-sat').value     = p?.sat     || 'Pcs';
+  document.getElementById('f-harga').value   = p?.harga   || '';
+  document.getElementById('f-margin').value  = p?.margin  || 10;
+  document.getElementById('f-stok').value    = p?.stok    !== undefined ? p.stok : '';
+  document.getElementById('f-stokmin').value = p?.stokMin || 10;
+  document.getElementById('f-platform').value= p?.platform|| 'GrabMart, GoMart, WA Business';
+  prevH();
+  document.getElementById('mov').classList.add('on');
+}
+
+function editProduk(id) {
+  const p = prods.find(x => x.id == id);
+  if (p) bukaFormProduk(p);
+}
+
+function simpanProduk() {
+  const nama  = document.getElementById('f-nama').value.trim();
+  const harga = parseFloat(document.getElementById('f-harga').value);
+  if (!nama)  { toast('❌ Nama produk wajib diisi!'); return; }
+  if (!harga) { toast('❌ Harga harus diisi!'); return; }
+
+  const btn = document.getElementById('btn-simpan-produk');
+  btn.textContent = 'Menyimpan...'; btn.disabled = true;
+
+  const data = {
+    id:       editId,
+    nama,
+    kat:      document.getElementById('f-kat').value,
+    bar:      document.getElementById('f-bar').value,
+    sat:      document.getElementById('f-sat').value,
+    harga,
+    margin:   parseFloat(document.getElementById('f-margin').value)||10,
+    stok:     parseInt(document.getElementById('f-stok').value)||0,
+    stokMin:  parseInt(document.getElementById('f-stokmin').value)||10,
+    platform: document.getElementById('f-platform').value,
+  };
+
+  const fn = editId ? 'editProduk' : 'tambahProduk';
+  google.script.run
+    .withSuccessHandler(() => {
+      closeDrawer('mov');
+      toast(editId ? '✅ Produk diperbarui!' : '✅ Produk ditambahkan!');
+      btn.innerHTML = '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="13" height="13"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/></svg> Simpan';
+      btn.disabled = false;
+      loadAll();
+    })
+    .withFailureHandler(() => {
+      toast('❌ Gagal menyimpan. Coba lagi.');
+      btn.innerHTML = 'Simpan'; btn.disabled = false;
+    })
+    [fn](data);
+}
+
+function hapusProduk(id) {
+  if (!confirm('Hapus produk ini?')) return;
+  google.script.run
+    .withSuccessHandler(() => { toast('🗑 Produk dihapus'); loadAll(); })
+    .withFailureHandler(() => toast('❌ Gagal hapus'))
+    .hapusProduk(id);
+}
+
+function renderStok() {
+  let list = skF === 'low' ? prods.filter(p => sst(p) !== 'ok') : prods;
+  const el = document.getElementById('sklist');
+  if (!list.length) {
+    el.innerHTML = `<div class="empty">
+      <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="36" height="36"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      <div>${skF==='low'?'Semua stok aman! 🎉':'Belum ada produk.'}</div>
+    </div>`;
+    return;
+  }
+  el.innerHTML = list.map(p => {
+    const st = sst(p);
+    return `<div class="sk-card ${st}">
+      <div class="sk-info">
+        <div class="sk-name">${p.nama}</div>
+        <div class="sk-sub">${p.sat} · Min. ${p.stokMin} · <span class="${st==='ok'?'stk-ok':st==='low'?'stk-low':'stk-out'}" style="padding:1px 6px;border-radius:5px;font-weight:700;font-size:10px">${st==='ok'?'Cukup':st==='low'?'Tipis':'Kosong'}</span></div>
+      </div>
+      <div class="sk-inputs">
+        <div class="sk-lbl">Stok</div>
+        <input type="number" class="sk-input" id="sv-${p.id}" value="${p.stok}" min="0">
+        <div class="sk-lbl" style="margin-top:2px">+Masuk</div>
+        <input type="number" class="sk-input masuk" id="si-${p.id}" placeholder="+0" min="0">
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function simpanSemuaStok() {
+  let count = 0;
+  const calls = prods.map(p => {
+    const svEl = document.getElementById('sv-'+p.id);
+    const siEl = document.getElementById('si-'+p.id);
+    if (!svEl) return null;
+    const stokBaru = (parseInt(svEl.value)||0) + (parseInt(siEl?.value)||0);
+    if (stokBaru !== parseInt(p.stok)) {
+      count++;
+      return new Promise(res => {
+        google.script.run
+          .withSuccessHandler(() => { p.stok = stokBaru; res(); })
+          .withFailureHandler(() => res())
+          .updateStok(p.id, stokBaru);
+      });
+    }
+    return null;
+  }).filter(Boolean);
+
+  if (!calls.length) { toast('Tidak ada perubahan stok.'); return; }
+  setDot('saving');
+  Promise.all(calls).then(() => {
+    setDot('ok');
+    renderStok(); renderProduk();
+    toast(`✅ ${count} stok berhasil diperbarui!`);
+    loadAll();
+  });
+}
+
+function renderSales() {
+  google.script.run
+    .withSuccessHandler(function(data) {
+      salesData = data;
+      _doRenderSales();
+    })
+    .withFailureHandler(() => {})
+    .getSales();
+}
+function _doRenderSales() {
+  const el = document.getElementById('klist');
+  if (!salesData.length) {
+    el.innerHTML = `<div class="empty">
+      <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="36" height="36"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 11.39 19a19.73 19.73 0 0 1-5.75-5.75A19.86 19.86 0 0 1 3 4.18 2 2 0 0 1 4.96 2h3a2 2 0 0 1 2 1.72"/></svg>
+      <div>Belum ada kontak sales.</div>
+    </div>`;
+    return;
+  }
+  el.innerHTML = salesData.map(s => `
+    <div class="sc-card">
+      <div class="sc-name">${s.nama}</div>
+      <div class="sc-cmp">${s.cmp||'-'}</div>
+      ${s.wa?`<div class="sc-row"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 11.39 19a19.73 19.73 0 0 1-5.75-5.75A19.86 19.86 0 0 1 3 4.18 2 2 0 0 1 4.96 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.09 9.91a16 16 0 0 0 5.75 5.75l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>${s.wa}</div>`:''}
+      ${s.kat?`<div class="sc-row"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>${s.kat}</div>`:''}
+      ${s.hari?`<div class="sc-row"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>${s.hari}</div>`:''}
+      ${s.min?`<div class="sc-row"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>${rp(s.min)} · ${s.trm||''}</div>`:''}
+      <div class="sc-acts">
+        ${s.wa?`<button class="btn btn-wa" style="flex:1;justify-content:center;font-size:12px" onclick="chatWA('${s.wa}','Halo ${s.nama}')">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="13" height="13"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Chat WA
+        </button>`:''}
+        <button class="btn btn-sm btn-red" onclick="hapusSalesItem('${s.id}')">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12" height="12"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+        </button>
+      </div>
+    </div>`).join('');
+}
+
+function chatWA(no, msg) {
+  const n = no.replace(/\D/g,'');
+  const url = `https://wa.me/${n.startsWith('0')?'62'+n.slice(1):n}?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
+}
+
+function bukaFormSales() { document.getElementById('msales').classList.add('on'); }
+
+function simpanSales() {
+  const nama = document.getElementById('s-nama').value.trim();
+  const wa   = document.getElementById('s-wa').value.trim();
+  if (!nama||!wa) { toast('❌ Nama dan WA wajib diisi!'); return; }
+
+  google.script.run
+    .withSuccessHandler(() => {
+      closeDrawer('msales');
+      toast('✅ Sales ditambahkan!');
+      ['s-nama','s-wa','s-cmp','s-kat','s-hari','s-min','s-trm','s-cat'].forEach(id => document.getElementById(id).value='');
+      renderSales(); loadAll();
+    })
+    .withFailureHandler(() => toast('❌ Gagal menyimpan'))
+    .tambahSales({
+      nama, wa,
+      cmp:  document.getElementById('s-cmp').value,
+      kat:  document.getElementById('s-kat').value,
+      hari: document.getElementById('s-hari').value,
+      min:  parseFloat(document.getElementById('s-min').value)||0,
+      trm:  document.getElementById('s-trm').value,
+      cat:  document.getElementById('s-cat').value
+    });
+}
+
+function hapusSalesItem(id) {
+  if (!confirm('Hapus kontak ini?')) return;
+  google.script.run
+    .withSuccessHandler(() => { toast('🗑 Dihapus'); renderSales(); loadAll(); })
+    .withFailureHandler(() => toast('❌ Gagal hapus'))
+    .hapusSales(id);
+}
+
+function renderWA() {
+  document.getElementById('walist').innerHTML = WATPLS.map(t => `
+    <div class="wa-item">
+      <span class="wa-kw">${t.k}</span>
+      <div class="wa-title">${t.t}</div>
+      <div class="wa-msg">${t.m}</div>
+      <button class="btn btn-sm btn-wa" onclick="salinTemplate(\`${t.m.replace(/`/g,'\\`')}\`)">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="11" height="11"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        Salin Template
+      </button>
+    </div>`).join('');
+}
+
+function salinTemplate(m) {
+  navigator.clipboard.writeText(m).then(() => toast('📋 Disalin!'));
+}
+
+loadAll();
+renderWA();
+</script>
+</body>
+</html>
