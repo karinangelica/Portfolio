@@ -1,6 +1,6 @@
 # Portfolio Karin Angelica
 
-Portfolio pribadi untuk pendaftaran S-Class BINUS @Alam Sutera. Halaman portfolio (`index.html` dan `html/`) dibuat hanya dengan HTML dan CSS, tanpa JavaScript.
+Portfolio pribadi untuk pendaftaran S-Class BINUS @Alam Sutera. Halaman portfolio (`index.html` dan `html/`)
 
 ## Struktur folder
 
@@ -21,7 +21,6 @@ demo/online-shop/       kode asli Archipelore Online Shop dari GitHub
 demo/password/          demo Password Checker: password_tool.py asli dijalankan lewat Pyodide
 demo/tokoku/            demo TokoKu Manager: Code.gs & Sidebar asli di atas tiruan Google Sheets
 images/                 foto, screenshot, sertifikat, halaman karya tulis, layar game Sankalpa
-files/                  CV dalam format PDF
 ```
 
 ## Interaksi tanpa JavaScript
@@ -40,11 +39,5 @@ Demo di dalam bingkai (`<iframe>`) adalah proyek terpisah.
 - `bridge.js` menggantikan `google.script.run`: panggilan dari panel dikirim ke halaman induk lewat `postMessage`.
 - `mock-apps-script.js` meniru `SpreadsheetApp`, `HtmlService`, `Utilities`, dan `Logger` di memori.
 - `shell.js` dan `shell.css` menggambar tampilan spreadsheet. Saat dibuka, demo menjalankan `setupAwal()`, `onOpen()`, dan `bukaSidebar()` dari Code.gs. Archipelore memakai JavaScript aslinya. Demo Password Checker memakai JavaScript kecil untuk memuat Python (Pyodide) saat pengunjung mulai mencoba.
-
-## Cara online-kan (GitHub Pages)
-
-1. Buat repository baru di GitHub, lalu upload seluruh isi folder ini.
-2. Buka Settings > Pages, pilih branch `main` dan folder `/ (root)`.
-3. Situs akan tersedia di `https://<username>.github.io/<nama-repo>/`.
 
 Catatan: video Sankalpa diputar dari Google Drive, jadi akses file di Drive harus "Siapa saja yang memiliki link".
