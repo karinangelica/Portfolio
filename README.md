@@ -23,15 +23,6 @@ demo/tokoku/            demo TokoKu Manager: Code.gs & Sidebar asli di atas tiru
 images/                 foto, screenshot, sertifikat, halaman karya tulis, layar game Sankalpa
 ```
 
-## Interaksi tanpa JavaScript
-
-- **Tab demo proyek** dan **pilihan level Sankalpa**: `input type="radio"` + selector `:checked ~`.
-- **Buku yang bisa dibalik**: setiap lembar punya `checkbox`, lalu `:has(:checked)` memutar lembar dengan `transform: rotateY(-180deg)`.
-- **Perbesar sertifikat & halaman buku**: atribut HTML `popover` dan `popovertarget`.
-- **Layar game**: galeri geser dengan `scroll-snap`.
-
-Demo di dalam bingkai (`<iframe>`) adalah proyek terpisah.
-
 ### Demo TokoKu Manager (`demo/tokoku/`)
 
 - `code-gs.js` adalah `Code.gs` asli, hanya ganti ekstensi supaya bisa dimuat browser.
